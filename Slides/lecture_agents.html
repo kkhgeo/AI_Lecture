@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>코딩 에이전트 강연</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css">
+<style>
+/* Rules: Slides/DESIGN_RULES.md — layout follows the user's own edit of slide 1 (2026-09-29):
+   title "용어(English)" 72 · definition "용어: 정의" one line 40 white · supporting lines 30 grey, left · figure large, right. No on-slide citations. */
+:root{
+  --fixed-slide-scale: 1;
+  --fs-title: 72px;
+  --fs-body:  40px;
+  --fs-note:  30px;
+  --fs-cap:   24px;   /* 12pt in PPTX */
+  --cream:  #fff3ea;
+  --silver: #d9d9d9;
+  --grey:   rgba(255,243,234,.55);
+  --f-ko: 'Paperlogy', 'Pretendard', sans-serif, 'Segoe UI Symbol';
+  --x0: 200px;
+  --w: 1520px;
+}
+html, body{ width:100%; height:100%; margin:0; overflow:hidden; background:#000; }
+*{ box-sizing:border-box; }
+h1,p{ margin:0; padding:0; }
+
+.slide{
+  position:fixed; left:50%; top:50%;
+  width:1920px; height:1080px; min-width:1920px; min-height:1080px;
+  overflow:hidden; isolation:isolate;
+  background:#000; color:var(--cream);
+  font-family:var(--f-ko);
+  opacity:0; visibility:hidden; pointer-events:none;
+  transform:translate(-50%,-50%) scale(var(--fixed-slide-scale));
+}
+.slide.active{ opacity:1; visibility:visible; pointer-events:auto; z-index:2; }
+.slide *{ word-break:keep-all; }
+
+.t-title{ position:absolute; left:var(--x0); top:96px; font-size:var(--fs-title); line-height:84px; font-weight:800; letter-spacing:-.02em; color:var(--silver); }
+.def{ position:absolute; left:var(--x0); top:212px; width:var(--w); font-size:var(--fs-body); line-height:56px; font-weight:400; color:var(--cream); }
+.side{ position:absolute; left:var(--x0); top:330px; width:500px; }
+.side p{ font-size:var(--fs-note); line-height:46px; font-weight:400; color:var(--grey); }
+.side p + p{ margin-top:36px; }
+.fig{ position:absolute; right:100px; }
+.cap{ position:absolute; right:100px; font-size:var(--fs-cap); line-height:34px; color:var(--grey); text-align:right; }
+.cap1{ top:962px; width:1000px; }
+.fig3{ top:300px; width:1100px; height:619px; }
+.cap3{ top:930px; width:1100px; }
+.fig4{ left:200px; right:auto; top:292px; width:1300px; height:470px; }
+.cap4{ right:auto; left:200px; top:770px; width:1300px; }
+.rows4{ position:absolute; left:200px; top:818px; width:1520px; }
+.rows4 p{ font-size:var(--fs-note); line-height:46px; color:var(--grey); white-space:nowrap; }
+.rows4 p + p{ margin-top:4px; }
+/* highlighter pen (soft): translucent white block over the full glyph height, text full cream */
+mark{ color:var(--cream); background:linear-gradient(transparent 14%, rgba(255,255,255,.22) 14%, rgba(255,255,255,.22) 90%, transparent 90%); padding:0 4px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+.cap2{ top:868px; width:1100px; }
+.fig1{ top:300px; width:1000px; height:651px; }
+.fig2{ top:320px; width:1100px; height:535px; }
+
+.fig5{ top:380px; width:1100px; height:470px; }
+.cap5{ top:872px; width:1100px; }
+.fig6{ top:380px; width:1100px; height:440px; }
+.cap6{ top:842px; width:1100px; }
+.fig7{ top:320px; width:1100px; height:592px; }
+.cap7{ top:922px; width:1100px; }
+.fig8{ top:340px; width:1100px; height:520px; }
+.cap8{ top:880px; width:1100px; }
+.fig9{ top:300px; width:1100px; height:650px; }
+.cap9{ top:962px; width:1100px; }
+.fig10{ top:380px; width:1100px; height:440px; }
+.cap10{ top:842px; width:1100px; }
+
+.traits{ position:absolute; left:var(--x0); top:330px; width:940px; }
+.traits p{ font-size:var(--fs-note); line-height:46px; color:var(--grey); white-space:nowrap; }
+.traits p + p{ margin-top:22px; }
+.fig11{ top:330px; width:620px; height:470px; }
+.cap11{ top:818px; width:620px; }
+
+.beliefs{ position:absolute; left:var(--x0); top:340px; width:800px; }
+.beliefs .crit{ font-size:var(--fs-note); line-height:46px; color:var(--grey); white-space:nowrap; }
+.beliefs .bel{ font-size:var(--fs-note); line-height:46px; color:var(--cream); white-space:nowrap; }
+.beliefs .bel + .crit{ margin-top:36px; }
+.fig12{ top:360px; width:800px; height:381px; }
+.cap12{ top:760px; width:800px; }
+.cap12b{ top:796px; width:800px; }
+.closing{ position:absolute; left:var(--x0); top:906px; width:var(--w); font-size:var(--fs-body); line-height:56px; color:var(--cream); white-space:nowrap; }
+
+.belief-sum{ position:absolute; left:var(--x0); top:330px; width:var(--w); }
+.belief-sum .crit{ font-size:var(--fs-note); line-height:46px; color:var(--grey); white-space:nowrap; }
+.belief-sum .bel{ font-size:var(--fs-body); line-height:56px; color:var(--cream); white-space:nowrap; margin-top:2px; }
+.belief-sum .bel + .crit{ margin-top:40px; }
+.closing2{ position:absolute; left:var(--x0); width:var(--w); font-size:var(--fs-body); line-height:56px; color:var(--cream); white-space:nowrap; }
+.closing2.c1{ top:840px; } .closing2.c2{ top:910px; }
+.fig13{ top:300px; width:900px; height:607px; }
+.cap13{ top:926px; width:900px; }
+.cap13b{ top:962px; width:900px; }
+.fig14{ top:310px; width:1100px; height:600px; }
+.cap14{ top:926px; width:1100px; }
+.cap14b{ top:962px; width:1100px; }
+
+.fig15{ top:300px; width:960px; height:602px; }
+.cap15{ top:920px; width:960px; }
+.cap15b{ top:956px; width:960px; }
+
+.fig16{ top:360px; width:1040px; height:470px; }
+.cap16{ top:850px; width:1040px; }
+
+.fig17{ top:340px; width:1100px; height:500px; }
+.cap17{ top:862px; width:1100px; }
+.cap17b{ top:898px; width:1100px; }
+
+.fig18{ left:var(--x0); right:auto; top:320px; width:1520px; height:564px; }
+.cap18{ left:var(--x0); right:auto; top:900px; width:1520px; }
+.cap18b{ left:var(--x0); right:auto; top:936px; width:1520px; }
+
+.fig21{ top:346px; width:1100px; height:504px; }
+.cap21{ top:866px; width:1100px; }
+.fig22{ top:346px; width:1100px; height:504px; }
+.cap22{ top:866px; width:1100px; }
+.fig23{ top:360px; width:1100px; height:476px; }
+.cap23{ top:852px; width:1100px; }
+
+.fig19{ left:var(--x0); right:auto; top:320px; width:1520px; height:540px; }
+.cap19{ left:var(--x0); right:auto; top:880px; width:1520px; }
+.cap19b{ left:var(--x0); right:auto; top:916px; width:1520px; }
+
+.fig20{ top:330px; width:1100px; height:600px; }
+.cap20{ top:944px; width:1100px; }
+
+/* speaker notes: screen only */
+/* assembled-deck slides (slides_extra.html): cover, agenda/summary rows, workflow table */
+.cover-title{ position:absolute; left:var(--x0); top:380px; font-size:var(--fs-title); line-height:84px; font-weight:800; letter-spacing:-.02em; color:var(--silver); }
+.cover-sub{ position:absolute; left:var(--x0); top:490px; width:var(--w); font-size:var(--fs-body); line-height:56px; color:var(--cream); }
+.fig24{ top:340px; width:1100px; height:520px; }
+.cap24{ top:876px; width:1100px; }
+.prem{ position:absolute; left:var(--x0); top:330px; width:820px; }
+.prem .crit{ font-size:var(--fs-cap); line-height:36px; color:var(--grey); white-space:nowrap; }
+.prem .bel{ font-size:var(--fs-note); line-height:46px; color:var(--cream); white-space:nowrap; margin-top:4px; }
+.prem .bel + .crit{ margin-top:30px; }
+.fig25{ top:400px; width:760px; height:309px; }
+.fig26{ top:350px; width:1100px; height:500px; }
+.fig27{ top:350px; width:1100px; height:470px; }
+.cap27{ top:840px; width:1100px; }
+.rows4b{ position:absolute; left:var(--x0); top:340px; width:var(--w); }
+.rows4b .row{ display:flex; align-items:baseline; gap:36px; }
+.rows4b .row + .row{ margin-top:38px; }
+.rows4b .hd{ width:430px; font-size:var(--fs-body); line-height:56px; color:var(--cream); white-space:nowrap; }
+.rows4b .ds{ font-size:var(--fs-note); line-height:46px; color:var(--grey); white-space:nowrap; }
+.ce-close{ position:absolute; left:var(--x0); top:830px; width:var(--w); font-size:var(--fs-body); line-height:56px; color:var(--cream); white-space:nowrap; }
+.cover-fig{ top:300px; width:640px; height:480px; }
+.cover-meta{ position:absolute; left:var(--x0); top:850px; font-size:var(--fs-note); line-height:46px; color:var(--grey); }
+.rows5{ position:absolute; left:var(--x0); top:340px; width:var(--w); }
+.rows5 .row{ display:flex; align-items:baseline; gap:36px; }
+.rows5 .row + .row{ margin-top:34px; }
+.rows5 .no{ width:44px; font-size:var(--fs-body); line-height:56px; color:var(--grey); }
+.rows5 .hd{ width:330px; font-size:var(--fs-body); line-height:56px; color:var(--cream); white-space:nowrap; }
+.rows5 .ds{ font-size:var(--fs-note); line-height:46px; color:var(--grey); white-space:nowrap; }
+.wtable{ position:absolute; left:var(--x0); top:322px; width:var(--w); border-collapse:collapse; border-top:2px solid rgba(255,243,234,.55); }
+.wtable th, .wtable td{ text-align:left; padding:0 24px 0 0; border-bottom:1px solid rgba(255,243,234,.25); }
+.wtable th{ height:56px; font-size:var(--fs-cap); font-weight:400; color:var(--grey); }
+.wtable td{ height:78px; font-size:var(--fs-note); color:var(--grey); white-space:nowrap; }
+.wtable td:first-child{ color:var(--cream); }
+.etable{ position:absolute; left:780px; top:338px; width:1040px; border-collapse:collapse; border-top:2px solid rgba(255,243,234,.55); }
+.etable th, .etable td{ text-align:left; padding:0 24px 0 0; border-bottom:1px solid rgba(255,243,234,.25); white-space:nowrap; }
+.etable th{ height:56px; font-size:var(--fs-cap); font-weight:400; color:var(--grey); }
+.etable td{ height:84px; font-size:var(--fs-note); color:var(--cream); }
+.etable td + td{ font-size:var(--fs-cap); color:var(--grey); }
+.gtable{ position:absolute; left:var(--x0); top:236px; width:var(--w); border-collapse:collapse; border-top:2px solid rgba(255,243,234,.55); }
+.gtable th, .gtable td{ text-align:left; padding:0 28px 0 0; border-bottom:1px solid rgba(255,243,234,.25); white-space:nowrap; }
+.gtable th{ height:50px; font-size:var(--fs-cap); font-weight:400; color:var(--grey); }
+.gtable td{ height:64px; font-size:var(--fs-note); color:var(--grey); }
+.gtable td:first-child{ width:420px; color:var(--cream); }
+.wnote{ position:absolute; left:var(--x0); top:902px; width:var(--w); font-size:var(--fs-note); line-height:46px; color:var(--grey); white-space:nowrap; }
+.notes{ display:none; }
+.notes-panel{
+  position:fixed; left:0; right:0; bottom:0; z-index:20; max-height:40vh; overflow:auto;
+  padding:18px 28px 22px; background:rgba(0,0,0,.9); border-top:1px solid rgba(255,243,234,.28);
+  color:var(--cream); font-family:var(--f-ko); font-size:16px; line-height:1.7; display:none;
+}
+body.show-notes .notes-panel{ display:block; }
+.notes-panel h3{ margin:0 0 6px; font-size:12px; font-weight:400; color:var(--grey); }
+.notes-panel ul{ margin:0; padding-left:20px; }
+
+@page{ size:1920px 1080px; margin:0; }
+@media print{
+  html, body{ width:1920px; height:auto; overflow:visible; background:#000;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .notes-panel{ display:none !important; }
+  .slide{ position:relative; left:auto; top:auto; opacity:1; visibility:visible; transform:none;
+    page-break-after:always; break-after:page; }
+  .slide:last-of-type{ page-break-after:auto; break-after:auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- B1. Beliefs summary -->
+<section class="slide" aria-label="전제">
+  <h1 class="t-title" data-tx>전제(Premises)</h1>
+  <p class="def" data-tx>전제: AI를 사용할 때 받아들이고 있는 세 가지 믿음.</p>
+  <div class="belief-sum">
+    <p class="crit" data-tx>비판: LLM은 의미 없이 다음 단어만 잇는 확률론적 앵무새(Stochastic parrot)다</p>
+    <p class="bel" data-tx>→ 사람의 뇌도 다음 말을 예측한다. 언어 모델은 뇌와 부분적으로 닮았다.</p>
+    <p class="crit" data-tx>비판: AI를 쓰면 사고력과 추론 능력이 떨어진다</p>
+    <p class="bel" data-tx>→ AI는 증폭기다. 생각을 맡기면 줄고, 생각을 넓히는 데 쓰면 는다.</p>
+    <p class="crit" data-tx>비판: AI는 평균적인 결과물만 만든다</p>
+    <p class="bel" data-tx>→ AI는 평균 이상의 초안을 모두에게 비슷하게 준다. 완성은 사람이 한다.</p>
+  </div>
+  <p class="closing2 c1" data-tx><mark>AI는 예측으로 돕고, 사람은 판단으로 완성한다.</mark></p>
+  <p class="closing2 c2" data-tx><mark>도구는 같아도, 쓰는 방식이 결과를 가른다.</mark></p>
+  <aside class="notes"><ul>
+    <li>이 파트는 강연 전체의 전제를 먼저 밝힌다. 세 비판은 실제로 제기되는 주장이며, 각 믿음은 근거가 허용하는 범위로 표현을 조정했다(Knowledge/05_ai_beliefs). 다음 세 장에서 하나씩 근거를 본다.</li>
+    <li>첫 번째 믿음의 근거: 뇌가 다음 단어를 예측한다(Goldstein 외, Nature Neuroscience 2022; Caucheteux 외, Nature Human Behaviour 2023). 언어 모델과 뇌의 부분적 유사성 — 다음 단어를 잘 예측하는 모델일수록 언어를 들을 때의 뇌 반응을 잘 설명(Schrimpf 외, PNAS 2021; Caucheteux·King, Communications Biology 2022, 저자 표현 "부분적으로 수렴"), GPT로 고른 문장이 새 참가자의 뇌 언어 영역 반응을 실제로 키우거나 줄임(Tuckute 외, Nature Human Behaviour 2024), 일상 대화에서 음성 모델 층 순서가 뇌의 처리 순서와 대응(Goldstein 외, Nature Human Behaviour 2025), LLM 안의 "언어 담당 부분"이 뇌 언어 영역과 더 닮음(AlKhamissi 외, NAACL 2025). 한계: 같다는 뜻이 아니며, 사람은 훨씬 적은 데이터로 배우고 몸·경험·의도와 연결되어 있다.</li>
+    <li>두 번째 마무리 문장: 같은 AI를 써도 생각을 맡기는 사람과 생각을 넓히는 데 쓰는 사람의 결과가 갈린다 — 다음 "증폭" 장의 양극화 그림으로 이어진다. 착안: Eero Alvar(“Bodybuilding for the Mind”, 2026-09) — 많은 사람이 생각을 맡기며 쇠퇴해도 “평균이 낮아지니 경쟁이 줄어 좋다”는 결론은 틀렸고, AI로 스스로를 단련하는 사람은 더 똑똑해진다.</li>
+  </ul></aside>
+</section>
+
+<!-- B2. Prediction -->
+<section class="slide" aria-label="예측">
+  <h1 class="t-title" data-tx>예측(Prediction)</h1>
+  <p class="def" data-tx>예측: 앞선 맥락으로 다음 말을 추정하는 과정. 사람의 뇌도 언어를 이렇게 처리한다.</p>
+  <div class="side">
+    <p data-tx>비판: LLM은 의미 없이 형식만 잇는<br>확률론적 앵무새(Stochastic parrot)다.</p>
+    <p data-tx>뇌 영상 연구에서 사람의 뇌도 다음<br>단어를 예측하며, <mark>언어 모델보다 더<br>먼 단어를 여러 층위에서 예측한다.</mark></p>
+    <p data-tx>예측한다는 사실만으로 이해가 없다고<br>보면, 사람의 이해도 부정하게 된다.</p>
+    <p data-tx>다만 학습 비용, 데이터 편향, 오용<br>위험에 대한 원 논문의 지적은 유효하다.</p>
+  </div>
+  <img class="fig fig13" data-img src="assets/fig-brain-prediction.svg" alt="Language algorithm predicts the next word; the human brain predicts several future words across its hierarchy">
+  <p class="cap cap13" data-tx>언어 모델은 다음 한 단어를, 뇌는 여러 층위에서 더 먼 단어까지 예측</p>
+  <p class="cap cap13b" data-tx>출처: Caucheteux, Gramfort &amp; King(Nature Human Behaviour, 2023)</p>
+  <aside class="notes"><ul>
+    <li>확률론적 앵무새: Bender, Gebru 외(FAccT 2021)의 표현. 의미와 연결되지 않은 채 형식만 이어 붙인다는 뜻. 원 논문의 중심은 학습 비용, 데이터 편향, 오용 위험이며 이 지적은 지금도 유효하다고 먼저 인정한다.</li>
+    <li>그림: Caucheteux, Gramfort &amp; King(2023) Fig. 1a를 원본 형식대로 다시 그림. 사람들이 이야기를 듣는 동안의 fMRI를 분석해, 언어 모델 활성에 앞으로 올 단어들의 표현을 더하면 뇌 활동을 더 잘 설명한다는 결과. 뇌는 여러 층위에서, 더 먼 미래까지 예측한다(높은 피질 영역일수록 더 멀리·더 추상적으로).</li>
+    <li>같은 방향의 독립 근거: Schrimpf 외(PNAS 2021), Goldstein 외(Nature Neuroscience 2022). 논리: 예측만으로 이해가 없다고 하면 사람의 이해도 부정하게 된다. LLM 내부에서도 운율을 미리 계획하는 등 단순 통계 이상의 흔적이 있다(Anthropic 해석 연구, 2025).</li>
+    <li>한계: 사람의 예측은 몸·행동·의도로 세계와 연결되어 있다. LLM은 “A는 B”를 배우고도 “B는 A”를 못 푸는 약점이 보고됐다(2023). 그래서 “인간도 앵무새”가 아니라 “예측이 곧 앵무새는 아니다”로 말한다.</li>
+  </ul></aside>
+</section>
+
+<!-- B3. Amplification -->
+<section class="slide" aria-label="증폭">
+  <h1 class="t-title" data-tx>증폭(Amplification)</h1>
+  <p class="def" data-tx>증폭: AI가 사고를 선택으로 만들면서, 쓰는 방식에 따라 능력 격차가 벌어지는 현상.</p>
+  <div class="beliefs">
+    <p class="crit" data-tx>비판: AI를 쓰면 사고력과 추론 능력이 떨어진다</p>
+    <p class="bel" data-tx><mark>고생이 훈련 신호다.</mark> 생각을 AI에 맡기면<br>부하가 사라지고 능력도 줄어든다.</p>
+    <p class="crit" data-tx>그러나 AI는 훈련 장비도 된다</p>
+    <p class="bel" data-tx>체스 엔진 이후 사람의 실력이 오른 것처럼,<br><mark>개념을 묻고 비판을 받는 데 쓰면 는다.</mark></p>
+    <p class="crit" data-tx>※ 양극화(Bifurcation)</p>
+    <p class="bel" data-tx>분포가 가운데로 모이지 않고<br>양쪽으로 벌어지는 것</p>
+  </div>
+  <img class="fig fig12" data-img src="assets/fig-competency-bifurcation.svg" alt="Competency distribution widening: not the competition vs the competition">
+  <p class="cap cap12" data-tx>점선은 AI 이전, 색 곡선은 AI 이후의 역량 분포, 양쪽으로 벌어짐</p>
+  <p class="cap cap12b" data-tx>출처: Eero Alvar, “Bodybuilding for the Mind”(YouTube, 2026)</p>
+  <aside class="notes"><ul>
+    <li>영상(Eero Alvar, 2026-09-27): 산업혁명으로 육체노동이 사라지자 헬스장과 보디빌딩이 생겼다. AI가 추론의 필요를 없애면서 사고도 선택이 되고, 마음의 보디빌딩이 생긴다는 비유. 고생(struggle)이 훈련 신호이며, 체스 엔진은 사람을 넘어선 뒤 훈련 장비가 되었다. 저자 스스로 엄밀한 증거가 아닌 유추라고 밝혔으므로 근거는 아래 실험으로 댄다.</li>
+    <li>맡기면 준다: 고교 수학 실험(Bastani 외, PNAS 2025)에서 AI 사용 중 성적은 48% 올랐지만, AI를 뗀 뒤에는 미사용 집단보다 17% 낮았다(튜터형 설계는 하락 대부분 방지). 숙련 내시경 의사 19명도 AI 사용 뒤 AI 없이 선종 발견율 28.4%→22.4%(2025) — 숙련자도 예외가 아니다.</li>
+    <li>넓히면 는다: Anthropic 실험(2026-01, 52명)에서 개념만 물어본 사람은 퀴즈 65% 이상, 통째로 맡긴 사람은 40% 미만. “상위 그룹”은 원래 잘하는 사람이 아니라 AI로 스스로에게 부하를 거는 사람이다.</li>
+    <li>주의: 결과물 기준으로는 초보자가 더 이득(고객 상담 초보 +34%, BCG 하위 절반 +43%). 고숙련자가 더 이득이라던 MIT 재료과학 논문(Toner-Rodgers 2024)은 MIT가 2025-05 신뢰를 철회했으므로 인용하지 않는다.</li>
+    <li>실천(부하 걸기): 먼저 직접 답을 쓰고 AI에게 비판받기, AI에게 나를 인터뷰하게 하기, 답 대신 개념과 근거만 묻기, 학습 모드 사용.</li>
+  </ul></aside>
+</section>
+
+<!-- B4. Completion -->
+<section class="slide" aria-label="완성">
+  <h1 class="t-title" data-tx>완성(Completion)</h1>
+  <p class="def" data-tx>완성: 초안에서 무엇을 남기고 고칠지 판단해 결과물을 끝내는 일.</p>
+  <div class="side">
+    <p data-tx>비판: AI는 평균적인 결과물만<br>만든다.</p>
+    <p data-tx>AI를 쓰면 개인의 창의성 평가는<br>오르지만, 결과물끼리는 서로<br>비슷해진다.</p>
+    <p data-tx>Claude Code 사용에서도 <mark>무엇을 할지는<br>사람이, 어떻게 할지는 AI가 정한다.</mark></p>
+    <p data-tx>초안은 AI가 제공하며, 선택과 판단,<br>마지막 완성과 그 고생은 사람의 몫이다.</p>
+  </div>
+  <img class="fig fig14" data-img src="assets/fig-division-of-labor.svg" alt="The division of labor: planning decisions mostly human, execution decisions mostly Claude">
+  <p class="cap cap14" data-tx>계획 결정은 대부분 사람이, 실행 결정은 대부분 Claude가 맡음</p>
+  <p class="cap cap14b" data-tx>출처: Anthropic, Claude Code 사용 연구(2026)</p>
+  <aside class="notes"><ul>
+    <li>그림: Anthropic의 Claude Code 사용 연구 “The division of labor” 그래프를 원본 형식대로 다시 그림(막대 값은 원본 그림에서 읽음). 가로축은 한 세션에서 Claude가 내린 결정의 비율. 계획 결정(파랑)은 Claude 비율이 낮은 쪽에, 실행 결정(주황)은 Claude 비율 90~100% 구간에 몰려 있다 — 사람이 무엇을 할지 정하고, Claude가 어떻게 할지 정한다(계획 결정의 약 70%는 사람).</li>
+    <li>평균으로의 수렴: AI 도움으로 개인의 창의성 평가는 오르지만 결과물끼리 비슷해진다(Doshi &amp; Hauser, Science Advances 2024). 사람 선호로 학습하면 답의 다양성이 줄어드는 경향(RLHF). AI 연구 아이디어는 전문가보다 참신하다는 평가를 받았지만(Si 외 2024), 실제로 실행하면 우위가 사라졌다(2025).</li>
+    <li>AI 능력 밖의 과제에서 AI를 쓴 컨설턴트의 정답률은 84%→60~70%(BCG, Dell’Acqua 외 2023). 어디까지가 AI의 영역인지 판단하는 것도 사람의 일이다.</li>
+    <li>“고생”의 의미: 초안을 고르고, 버리고, 다시 쓰는 과정이 결과물의 질과 사람의 능력을 함께 만든다(증폭 장과 연결).</li>
+  </ul></aside>
+</section>
+
+<!-- B5. Human in the loop -->
+<section class="slide" aria-label="사람 개입">
+  <h1 class="t-title" data-tx>사람 개입(Human in the loop)</h1>
+  <p class="def" data-tx>사람 개입: AI의 작업 과정에 사람이 판단과 검증으로 참여하는 것.</p>
+  <div class="side">
+    <p data-tx>AI는 결과물의 대부분을 빠르게 만들지만,<br><mark>마지막 구간은 여전히 사람의 판단으로<br>채워진다.</mark></p>
+    <p data-tx>완성에 가까워질수록 한 단계를 올리는<br>데 드는 노력은 줄지 않는다. <mark>데모는<br>쉽고, 완성은 어렵다.</mark></p>
+    <p data-tx>AI가 줄여 준 시간만큼 여러 작업을<br>동시에 진행할 수 있으며, 이때 병목은<br>작성에서 검토로 옮겨간다.</p>
+    <p data-tx>※ 나인의 행진(March of nines):<br>신뢰도를 90%에서 99%, 99.9%로 한<br>단계 올릴 때마다 비슷한 노력이 드는 현상</p>
+  </div>
+  <img class="fig fig15" data-img src="assets/fig-shipping-pain.svg" alt="Perfection line unchanged; with AI the pain-of-not-shipping curves rise faster in parallel and a human closes the last stretch; without AI takes longer">
+  <p class="cap cap15" data-tx>AI는 기준 아래까지 빠르게, 남은 구간은 사람이 채움, 여러 과정 병렬 진행</p>
+  <aside class="notes"><ul>
+    <li>그림 읽기: 가로축은 시간, 세로축은 고통. 빨간 선(perfection)은 완성 기준, 곡선은 결과를 내놓지 못해 커지는 고통이며 두 선이 만나는 점에서 결과를 낸다. AI를 쓰면 곡선이 가팔라져 초록 점선(AI 혼자 갈 수 있는 수준)까지 빠르게 오르고, 남은 흰 구간은 사람이 채운다. 초록 곡선 여러 개는 동시에 진행하는 작업, 회색 실선은 AI 없이 걸리는 시간. Eero Alvar, “Bodybuilding for the Mind”(YouTube, 2026-09-27)의 도식에서 착안해, 강연자의 관점(AI 한계선, 사람이 채우는 구간, 병렬, AI 없는 경우와의 비교)을 더해 새로 그림.</li>
+    <li>1번 근거 — Addy Osmani, “The 70% problem”(2024-12): AI는 70%까지 빠르게 데려가지만, 남은 30%(예외 상황, 보안, 다른 부분과의 연결)는 처음 70%보다 오래 걸리고 숙련자의 판단이 필요하다. 에이전트 시대에는 80%로 올라갔다는 후속 글도 있다(“The 80% Problem in Agentic Coding”). 숫자는 측정값이 아닌 경험적 어림수.</li>
+    <li>2번 근거 — Andrej Karpathy의 나인의 행진(Dwarkesh Patel 인터뷰, 2025-10): 90% 작동하는 데모는 첫 번째 9일 뿐이고, 99%, 99.9%로 갈 때마다 비슷한 노력이 든다. 테슬라 자율주행 5년 동안 9를 2~3개 올렸다고 한다. 데모는 쉽고 제품은 어렵다. 대학원생 예: 분석 코드가 일단 돌아가는 것(90%) → 예외 데이터에서도 맞는 것(99%) → 재현되고 심사를 버티는 것(99.9%). 논문의 질은 뒤쪽 9에서 갈린다.</li>
+    <li>3번 근거 — Boris Cherny(Claude Code 책임자, 2026): 작업 공간 3~5개에서 Claude를 동시에 돌리는 것이 가장 큰 생산성 향상. 그 결과 병목이 코드 작성에서 코드 검토로 옮겨갔고, Anthropic은 검토도 여러 Claude에게 나눠 맡기되 최종 승인은 사람이 한다(Fortune, 2026-06-11).</li>
+    <li>주의: 시간 단축은 과제와 사람에 따라 다르다. 숙련 개발자 실험에서는 오히려 19% 느려졌다(METR 2025). 줄이는 것은 기준까지 가는 과정이지, 기준에 맞추는 검증이 아니다.</li>
+  </ul></aside>
+</section>
+
+<!-- B6. Metacognitive demands -->
+<section class="slide" aria-label="메타인지 부담">
+  <h1 class="t-title" data-tx>메타인지 부담(Metacognitive demands)</h1>
+  <p class="def" data-tx>메타인지 부담: AI와 일하는 동안 무엇을 원하고 맡길지, 결과가 맞는지 계속 판단해야 하는 부담.</p>
+  <div class="side">
+    <p data-tx>AI가 작업을 대신하는 만큼, 목표를<br>정하고 일을 나누고 결과를 평가하는<br>생각은 사람에게 남는다.</p>
+    <p data-tx>이 생각이 작업 기억을 함께 차지하면서,<br><mark>정작 문제를 깊이 생각할 여유가<br>줄어든다.</mark></p>
+    <p data-tx>원하는 것을 정리하지 않고 먼저 물으면,<br><mark>그 생각 자체를 건너뛰게 된다.</mark></p>
+    <p data-tx>※ 메타인지(Metacognition): 자신의<br>생각을 살피고 조절하는 생각</p>
+  </div>
+  <img class="fig fig16" data-img src="assets/fig-working-memory.svg" alt="Working memory of about four chunks: without AI all go to the task; with AI two are taken by goal/delegation and evaluation">
+  <p class="cap cap16" data-tx>AI와 일하면 작업 기억의 일부를 목표 설정과 결과 평가가 차지</p>
+  <aside class="notes"><ul>
+    <li>근거: Tankelevitch 외, “The Metacognitive Demands and Opportunities of Generative AI”(CHI 2024, Microsoft Research) — AI와 일하면 과제 위에 목표를 분명히 하고, 일을 나누고, 결과와 자기 확신을 점검하고, 언제 AI를 쓸지 정하는 메타인지가 계속 요구된다. Subramonyam 외, “Bridging the Gulf of Envisioning”(CHI 2024) — 원하는 결과를 떠올리고 AI에게 전달할 말로 옮기는 단계가 어렵고(구상의 간극), 바로 물으면 무엇을 원하는지 정리하는 생각을 건너뛴다(의도의 간극).</li>
+    <li>그림: 직접 그린 도식. 작업 기억은 한 번에 약 4덩어리를 다룬다(Cowan 2001). 인지 부하 이론(Sweller)으로 보면 AI를 다루는 생각은 과제와 상관없는 외재적 부하로 작업 기억을 차지한다. 칸 수는 개념을 보이기 위한 단순화이며 측정값이 아니다. 이 주제를 “인지 부하”로 직접 측정한 통제 실험은 아직 없고, 이론·관찰 연구·실무자 증언이 근거다.</li>
+    <li>비유: 직접 운전할 때는 길만 보면 되지만, 초보 운전자에게 길을 안내하면 목적지 설명, 갈림길 예고, 지켜보기, 끼어들 시점 판단까지 해야 해서 운전대를 안 잡아도 더 피곤하다.</li>
+    <li>흐름을 끊는 요인: 작업이 중단된 뒤 1분 안에 코딩으로 돌아가는 개발자는 10%(Parnin &amp; Rugaber). 사람은 분당 약 238단어를 읽지만 AI 출력은 더 빠르고 길다. 실무자 증언: Simon Willison “오전 11시면 녹초가 된다”(2026-04), 자기 프로젝트의 구조가 머릿속에서 흐려진다(2026-02). Mitchell Hashimoto는 작업 전환 비용 때문에 에이전트 알림을 끈다(2026-02).</li>
+    <li>관련 흐름: AI는 부하를 줄여 준다는 기대가 컸지만(오프로딩), 부담은 확인·통합·판단으로 옮겨 가고(Microsoft·CMU 2025: 평가 노력 감소는 55%뿐), 감독할 일이 늘면 피로가 커진다(BCG 2026 “brain fry”).</li>
+    <li>실천: 먼저 원하는 것을 직접 몇 줄 써 본 뒤 묻는다. 짧게 주고받는다. 출력을 짧게 요청한다. 에이전트 알림을 끄고 몰아서 확인한다. 계획 모드로 목표와 범위를 먼저 합의한다.</li>
+  </ul></aside>
+</section>
+
+<!-- B7. Representation -->
+<section class="slide" aria-label="표현 방식">
+  <h1 class="t-title" data-tx>표현 방식(Representation)</h1>
+  <p class="def" data-tx>표현 방식: AI의 결과를 사람이 빠르게 이해하고 검증할 수 있는 형태로 바꾸어 보여 주는 것.</p>
+  <div class="side">
+    <p data-tx>AI의 출력은 읽는 속도보다 빠르고<br>길며, 구조가 드러나지 않아 해석하는<br>부담이 크다.</p>
+    <p data-tx>같은 내용도 도식, 표, 결론 우선 요약으로<br>보면 <mark>탐색이 넓어지고 오류를 더 잘<br>찾는다.</mark></p>
+    <p data-tx>결과를 받기 전에 <mark>보여 줄 형식을<br>정해 요청하는 것도 사람의 일이다.</mark></p>
+    <p data-tx>※ 생성형 UI(Generative UI): 질문에<br>맞춰 AI가 화면 구성까지 만들어<br>보여 주는 방식</p>
+  </div>
+  <img class="fig fig17" data-img src="assets/fig-graphologue.svg" alt="Graphologue: a GPT-4 response turned into an interactive node-link diagram">
+  <p class="cap cap17" data-tx>긴 답변 글을 개념과 관계의 도식으로 바꾸어 보여 줌</p>
+  <p class="cap cap17b" data-tx>출처: Jiang 외, Graphologue(UIST 2023)</p>
+  <aside class="notes"><ul>
+    <li>그림: Jiang 외, “Graphologue: Exploring Large Language Model Responses with Interactive Diagrams”(UIST 2023)의 대표 그림을 원본 형식(위 GPT-4 답변 줄, 왼쪽 원문 패널과 보기 전환, 오른쪽 노드-링크 도식, 선택한 노드 강조)대로 다시 그림. 주석 태그와 손 커서는 생략. 사전 조사(10명)에서 사람들은 LLM 답이 장황하고, 구조가 보이지 않고, 정리할 수 없다고 했다 — 강연자가 겪는 어려움과 같다.</li>
+    <li>근거: Sensecape(UIST 2023, 12명) — 답을 여러 층위로 펼쳐 보게 하자 비슷한 횟수로 질문하고도 탐색한 개념이 22.8개→68.3개. Zhou 외(2025, 125명, 동료 심사 전) — AI 추론을 그래프로 보여 주자 오류 발견 73.5%→85.6%. 코딩 에이전트 출력(diff 등)을 글과 시각 형식으로 직접 비교한 통제 실험은 아직 없다.</li>
+    <li>실무자: Karpathy(YC 강연, 2025-06-17) — 글은 해석하기 힘들어 빨강·초록 diff 같은 GUI로 AI의 작업을 빨리 확인해야 하고, AI는 짧은 목줄로 다뤄야 한다. Willison(2026) — 대화형 설명과 단계별 안내로 “인지 부채”를 갚는다.</li>
+    <li>업계 흐름: Claude Artifacts(2024-06), OpenAI Canvas(2024-10), Claude Code 출력 스타일(2025), Google Generative UI(2025-11) — 결과를 글 대신 화면·도식·문서로 보여 주는 방향.</li>
+    <li>Claude Code에서 바로 쓰는 요청: “결론 먼저, 3줄 요약 후 상세”, “표로 정리해 줘”, “변경 사항을 파일별로 요약해 줘”, “구조를 다이어그램으로 보여 줘”, “HTML 한 페이지로 설명해 줘”, 출력을 짧게 요청하기.</li>
+  </ul></aside>
+</section>
+
+<!-- 0. AI agent -->
+<section class="slide" aria-label="AI 에이전트">
+  <h1 class="t-title" data-tx>AI 에이전트(AI agent)</h1>
+  <p class="def" data-tx>AI 에이전트: LLM에 도구와 기억을 붙여, 목표를 스스로 계획·실행·검증하게 한 시스템.</p>
+  <div class="side">
+    <p data-tx>에이전트는 LLM과 하네스로 이루어진다.<br>LLM이 다음 행동을 판단하면, 하네스가<br>이를 실행하고 결과를 돌려준다.</p>
+    <p data-tx>요청을 받으면 LLM이 기억(지침 파일·<br>작업 기록), 스킬(작업 절차), 도구(파일·<br>셸·검색) 중 필요한 것을 골라 쓴다.</p>
+    <p data-tx>사람이 목표를 주면 에이전트는 <mark>계획,<br>실행, 검증을 끝날 때까지 반복하고,</mark><br>완료되면 결과를 보고한다.</p>
+    <p data-tx>※ 하네스(Harness): 모델을 감싸 도구를<br>제공하고 컨텍스트를 관리하는 프로그램<br>(Claude Code, Codex 등)</p>
+  </div>
+  <img class="fig fig21" data-img src="assets/fig-ai-agent.svg" alt="AI agent frame with three linked rows: the mascot labelled AI agent with LLM + Harness; Memory, Skills, Tools; Plan, Act, Verify, repeat until done. Human outside sends a request, may check, and gets the result">
+  <p class="cap cap21" data-tx>사람의 요청에 기억·스킬·도구를 골라 쓰며 계획·실행·검증 반복, 결과 보고</p>
+  <aside class="notes"><ul>
+    <li>정의: Simon Willison(2025-09-18) “An LLM agent runs tools in a loop to achieve a goal” — X에서 모은 정의 211개가 이 형태로 수렴했다고 정리. Anthropic “Effective context engineering”(2025-09-29)도 “LLM이 도구를 루프 안에서 자율적으로 사용하는 것”으로 요약. OpenAI “A practical guide to building agents”(2025): “Agents are systems that independently accomplish tasks on your behalf.” LLM을 쓰더라도 작업 흐름을 직접 제어하지 않는 챗봇·단발 호출은 에이전트가 아니라고 선을 긋는다. 세 정의 모두 도구와 반복이 핵심이므로 화면의 정의에도 “도구를 반복해 쓰며”를 넣었다.</li>
+    <li>LLM + 하네스: Claude Code 공식 문서 “How Claude Code works”는 모델을 감싸 도구를 제공하고 컨텍스트를 관리하는 층을 agentic harness라 부르고, Claude Code 자체를 그 하네스로 설명한다. OpenAI “Unrolling the Codex agent loop”(2026-01-23): 모델은 최종 답 또는 도구 호출(call)을 내고, 하네스가 도구를 실행해 결과(result)를 붙여 다시 모델을 부른다. 비유: 모델 = 엔진, 하네스 = 자동차, 사람 = 운전자.</li>
+    <li>기억(Memory): 세션은 빈 컨텍스트로 시작하므로, 사람이 쓰는 지침 파일(CLAUDE.md, AGENTS.md)과 에이전트가 남기는 작업 기록(auto memory, 진행 파일)이 세션을 넘어 이어 준다(Claude Code 문서 “Memory”). 스킬(Skill): 특정 작업의 절차·스크립트·자료를 담은 폴더(SKILL.md). 이름과 설명만 미리 올려 두고 필요할 때 본문을 읽는다(Anthropic, 2025-10-16; 2025-12 오픈 표준). 도구(Tools): 파일 읽기·쓰기, 셸, 검색, MCP로 연결한 외부 서비스.</li>
+    <li>계획·실행·검증: 원문 루프와 이름이 다르다. Claude Code·Agent SDK의 루프는 맥락 수집 → 행동 → 결과 확인(gather context → take action → verify)이고, 계획은 별도 단계가 아니다. Anthropic “Building effective agents”(2024-12)는 과제가 명확해지면 계획한 뒤 독립적으로 실행한다고 하고, Weng(2023)·LangChain(2026)은 계획을 목표를 단계로 나누고 진행에 따라 고쳐 가는 기능으로 본다. 그림의 Plan은 맥락 수집과 계획 수정(재계획)을 합친 것. 다음 장들에서 코딩 에이전트, 에이전트 루프, 작업 방식(탐색 → 계획 → 구현 → 검증 → 커밋)으로 구체화한다. 그림은 직접 그림.</li>
+    <li>그림: 직접 그림. 점선 상자 전체가 AI 에이전트이고, 위에서 아래로 이어진 세 칸으로 읽는다. 첫째 칸: 캐릭터(Claude Code의 마스코트, AI agent) = LLM + 하네스. 둘째 칸: 에이전트가 쓰는 기억·스킬·도구 — 무엇을 쓸지는 LLM이 고르고 하네스가 제공·실행. 셋째 칸: 계획 → 실행 → 검증을 끝날 때까지 반복. 상자 밖 왼쪽은 사람(요청·확인·결과). 애니메이션(HTML 발표에서만): Plan → Act → Verify가 2초씩 차례로 구리색으로 켜지고, 검증이 끝날 때 캐릭터가 한 바퀴 돈다. PPTX·PDF에서는 정지 그림.</li>
+    <li>사람의 확인(check, 점선): 사람은 목표만 주고 끝나는 것이 아니다. Anthropic — 체크포인트나 막힌 지점에서 사람에게 확인을 받는다. OpenAI — 실패하면 실행을 멈추고 사용자에게 통제를 넘긴다. Claude Code — 진행 중 중단(Esc)하거나 메시지로 방향을 바꾼다. 끝났는지 판단할 검증 기준이 없으면 에이전트는 멈출 기준이 없고, 그때는 사람이 검증 루프가 되어야 한다.</li>
+    <li>구성 요소를 나누는 방식은 출처마다 다르다: Lilian Weng(2023) LLM(두뇌) + 계획·기억·도구 사용 / Anthropic(2024) augmented LLM = LLM + 검색·도구·기억 / OpenAI(2025) 모델·도구·지침(Instructions: 지침과 안전장치) / LangChain(Vivek Trivedy, 2026-03-10) “Agent = Model + Harness” — 하네스는 시스템 프롬프트, 도구·스킬·MCP, 파일시스템·샌드박스, 오케스트레이션, 훅. 화면의 기억·스킬·도구는 최근 하네스 관점의 단순화이며, OpenAI의 지침은 “기억(지침 파일)”에, 권한·샌드박스는 11번 공통 구조 장에서 다룬다.</li>
+  </ul></aside>
+</section>
+
+<!-- 0b. Domain-specific agent -->
+<section class="slide" aria-label="도메인 특화 에이전트">
+  <h1 class="t-title" data-tx>도메인 특화 에이전트(Domain-specific agent)</h1>
+  <p class="def" data-tx>도메인 특화 에이전트: 범용 에이전트에 한 분야의 지식·도구·데이터·검증을 결합한 에이전트.</p>
+  <div class="side">
+    <p data-tx>모델을 새로 학습시키기보다, 하네스에<br>그 분야의 지침·스킬·도구를 바꿔 끼워<br>만든다.</p>
+    <p data-tx>화학 에이전트는 화학 도구 18개를,<br>생의학 에이전트는 도구·소프트웨어·<br>DB 300여 개를 갖춘다.</p>
+    <p data-tx>결과는 <mark>그 분야의 기준(실험, 관측,<br>전문가)으로 검증해야 한다.</mark> LLM<br>평가는 유창한 답에 속기 쉽다.</p>
+    <p data-tx>※ 버티컬 AI 에이전트(Vertical AI<br>agent): 산업 하나에 깊게 특화된<br>에이전트를 부르는 업계 용어</p>
+  </div>
+  <img class="fig fig22" data-img src="assets/fig-domain-agent.svg" alt="Same agent skeleton as the AI agent figure; the Memory, Skills, Tools row switches from a general setup to an environmental-research setup (SOPs and literature, data QC and reporting, GIS, databases and models), and an external Data store (domain knowledge) joins the agent through a connector">
+  <p class="cap cap22" data-tx>같은 LLM·하네스, 둘째 칸과 연결 데이터만 환경 연구용으로 교체</p>
+  <aside class="notes"><ul>
+    <li>용어: 하나로 정해진 이름은 없다. 학계 모델 수준은 domain specialization(Ling 외, ACM Computing Surveys 2025, DOI 10.1145/3764579), 과학 분야 에이전트는 scientific agents(Ren 외, arXiv 2503.24047), Anthropic은 specialized agents, 업계는 vertical AI agents(Y Combinator Lightcone 팟캐스트, 2024-11-22). 화면의 정의는 Ren 외가 든 범용 에이전트와의 네 가지 차이(도메인 지식 통합, 전문 도구·장비를 통한 행동, 이질적 과학 데이터, 검증 메커니즘)를 한 문장으로 묶은 것. 근거 노트: Knowledge/07_domain_agents.</li>
+    <li>바꿔 끼워 만든다: ChemCrow(Nature Machine Intelligence 2024)는 GPT-4에 화학 도구 18개(학술지판 기준, 프리프린트는 13개)를 붙인 ReAct 루프로, 로봇 장비에서 실제 합성 4건을 수행. Coscientist(Nature 2023)는 GPT-4 Planner가 웹·문서 검색, 코드 실행, 실험 장비 제어를 골라 쓰며 실험을 설계·수행. Biomni(Stanford 등, 2025 프리프린트, 2026-07 Science 게재 보도)는 문헌에서 캐낸 도구 150·소프트웨어 105·DB 59(합 314)를 갖춘 생의학 에이전트. 업계에서는 Anthropic 금융 템플릿 10종(2026-05)이 skill(업무 지식) + connector(데이터 접근) + subagent로 구성되고, 파일(markdown·YAML·JSON)만으로 공개되어 있다. 미세조정 없이 하네스 쪽만으로 특화된다는 점이 핵심.</li>
+    <li>검증: ChemCrow 평가에서 GPT-4 평가자는 유창한 GPT-4 단독 답을 더 높게 봤지만, 화학 전문가 4명은 ChemCrow를 더 높게 평가했다. 도메인 결과는 LLM 평가로 대신할 수 없다. 금융 에이전트 최고 성능도 Vals AI Finance Agent 64.37%(Anthropic 발표)이고, 회사도 사람 검토를 전제한다.</li>
+    <li>그림: 앞 장의 AI 에이전트 그림과 같은 뼈대. 첫째 칸(LLM + 하네스)과 셋째 칸(계획 → 실행 → 검증)은 그대로이고, 둘째 칸만 범용 설정(회색: CLAUDE.md·메모, 일반 절차, 파일·셸·웹)에서 환경 연구 설정(구리색: 표준운영절차(SOP)·문헌, 자료 QC·보고, GIS·DB·모델)으로 바뀐다. 왼쪽 아래 Data는 에이전트 밖에 있는 자료(로컬 파일 → 도메인 지식)로, connector(MCP 등)를 통해 연결된다 — Anthropic 금융 템플릿이 connector를 skill과 별개 구성요소로 두고, Ren 외가 이질적 과학 데이터를 범용 에이전트와의 차이로 드는 것과 같은 구도. 정의의 지식·도구·데이터·검증이 그림의 Memory·Tools·Data·Verify에 대응. 환경 연구 예시는 강연자가 만든 예. Claude Code에서는 CLAUDE.md(분야 지침), .claude/skills/(분야 절차), MCP 서버(분야 DB·도구 연결)로 바로 만들 수 있다. 애니메이션은 HTML에서, PPTX에서는 영상으로 재생.</li>
+    <li>더 말할 거리: 환경·지구 분야 에이전트로 서베이(Ren 외)가 GeoAgent, PANGAEA GPT, Earth-Agent, ClimateGPT 등을 든다(개별 논문 미열람). 자율성 단계(Zheng 외, EMNLP 2025): Tool → Analyst → Scientist. 대학원 연구에서 현실적인 위치는 Analyst(사람이 문제를 정하고 결과를 검증).</li>
+  </ul></aside>
+</section>
+
+<!-- 0c. Agentic RAG -->
+<section class="slide" aria-label="에이전틱 RAG">
+  <h1 class="t-title" data-tx>에이전틱 RAG(Agentic RAG)</h1>
+  <p class="def" data-tx>에이전틱 RAG: 근거가 충분할 때까지 LLM이 스스로 검색을 계획·평가·반복하는 방식.</p>
+  <div class="side">
+    <p data-tx>기존 RAG는 질문마다 한 번 검색해<br>찾은 문서를 붙여 답한다. 검색 경로는<br>미리 정해져 있다.</p>
+    <p data-tx>에이전틱 RAG는 찾은 근거를 평가해<br>부족하면 질의를 고쳐 다시 찾는다.<br>검색은 에이전트의 도구 중 하나다.</p>
+    <p data-tx>둘을 가르는 기준은 <mark>추론 중에 새<br>검색이 일어나는가</mark>이다. 대신 시간과<br>비용이 늘어 단순한 질문엔 과하다.</p>
+    <p data-tx>※ RAG(Retrieval-Augmented<br>Generation): 외부 문서를 검색해<br>답변 생성에 쓰는 방법</p>
+  </div>
+  <img class="fig fig23" data-img src="assets/fig-agentic-rag.svg" alt="Traditional RAG: Query, Retrieve once, Generate, Answer on a fixed path. Agentic RAG: Query, Plan, Retrieve with vector DB, web and files, Evaluate; if not enough, Rewrite query and plan again; if enough, Generate">
+  <p class="cap cap23" data-tx>기존 RAG는 한 번 검색 후 생성, 에이전틱 RAG는 근거 평가 후 재검색 반복</p>
+  <aside class="notes"><ul>
+    <li>계보: RAG는 Lewis 외(NeurIPS 2020)에서 시작 — 검색기(DPR)가 위키피디아 약 2,100만 조각에서 문서를 찾고 생성기(BART)가 답한다. Gao 외 서베이(2023-12)는 이를 Naive(색인 → 검색 → 생성) → Advanced(검색 전·후 최적화) → Modular로 정리했고, 이 서베이에는 "agentic RAG"라는 말이 없다. 이후 모델이 검색 시점을 정하는 방법들이 나왔다: ReAct(ICLR 2023, 생각·행동·관찰 루프로 위키 검색), FLARE(EMNLP 2023, 확신이 낮을 때 검색), Self-RAG(ICLR 2024, 검색·평가 토큰), CRAG(2024, 검색 결과가 나쁘면 웹 검색으로 교정), Adaptive-RAG(NAACL 2024, 질문 난이도로 경로 선택). "Agentic RAG"라는 이름은 Singh 외 서베이(arXiv 2501.09136, 2025-01)가 정리 — RAG 파이프라인 안에 언제 검색할지, 질의를 어떻게 고칠지, 근거가 충분한지를 정하는 제어 층(에이전트)을 둔다. 근거 노트: Knowledge/08_agentic_rag.</li>
+    <li>기준: Li 외 서베이(Findings of EMNLP 2025)는 추론이 새 검색을 동적으로 일으키면 상호작용형(agentic)으로 본다. 용어는 아직 합의되지 않았다 — 같은 Adaptive-RAG를 Singh은 agentic, Liang 외(Findings of IJCNLP-AACL 2025)는 미리 정한 추론(System 1)으로 분류한다.</li>
+    <li>숫자: ReAct 오류 분석(HotpotQA 200건)에서 CoT 실패의 56%가 환각, ReAct는 0%(단, ReAct 단독 정확도는 CoT보다 낮고 둘을 결합할 때 가장 높다). Adaptive-RAG에서 질문당 시간은 무검색 0.35초, 1회 검색 3.08초, 다단계 27.18초 — 반복 검색은 비싸다. Anthropic 다중 에이전트 리서치 시스템은 대화의 약 15배 토큰을 쓴다.</li>
+    <li>현재 형태: 강화학습으로 추론 중 검색을 배우는 Search-R1(COLM 2025), OpenAI·Gemini 딥리서치, Anthropic 리서치 시스템. 주의: 딥리서치류의 인용 정확도는 40~80%로 보고되며(DeepTRACE, 초록 기준), 제시한 출처가 뒷받침하지 않는 문장이 상당하다. 연구에 쓸 때 원문 대조는 사람 몫. Singh 외도 "agentic RAG가 늘 기본값은 아니고 검색 품질이 여전히 병목"이라고 정리한다.</li>
+    <li>Claude Code와의 연결(강연자 해석): Claude Code는 벡터 색인 없이 grep·find 같은 패턴 검색을 루프 안에서 반복한다(공식 도구 문서). 파일을 찾고, 읽고, 부족하면 다시 찾는 것이 곧 에이전틱 RAG의 실천 형태다. 앞 장 그림으로 보면 검색은 Tools 중 하나이고, Plan → Act → Verify가 검색 횟수와 질의를 정한다. 그림은 직접 그림. 애니메이션은 계획 → 검색 → 평가 → 질의 수정을 두 번 돈 뒤 생성.</li>
+  </ul></aside>
+</section>
+
+<!-- 1. Coding agent -->
+<section class="slide" aria-label="코딩 에이전트">
+  <h1 class="t-title" data-tx>코딩 에이전트(Coding agent)</h1>
+  <p class="def" data-tx>코딩 에이전트: 코드를 읽고 고치고 실행하는 일에 특화된 AI 에이전트.</p>
+  <div class="side">
+    <p data-tx>채팅 AI는 답변을 글로 제시하고, 실행은<br>사용자가 맡는다. 에이전트는 <mark>파일 수정과<br>테스트 실행까지 직접 수행한다.</mark></p>
+    <p data-tx>모델(LLM)에 파일 읽기·쓰기, 셸, 검색<br>등의 도구를 결합하고, 이를 반복적으로<br>활용하도록 구성된 시스템이다.</p>
+    <p data-tx>코딩 외에도 데이터 분석, 문서 작성,<br>파일 정리 등 <mark>컴퓨터에서 수행하는<br>대부분의 작업에 활용할 수 있다.</mark></p>
+  </div>
+  <img class="fig fig5" data-img src="assets/fig-autonomous-agent.svg" alt="Autonomous agent: Human, LLM Call, Environment, Action, Feedback, Stop">
+  <p class="cap cap5" data-tx>LLM이 환경에 행동하고 피드백을 받아 다음 행동 결정, 완료 시 정지</p>
+  <aside class="notes"><ul>
+    <li>출처: 에이전트 정의 Simon Willison(2025-09-18), Anthropic “Effective context engineering”(2025-09-29) — 둘 다 “도구를 루프로 쓰는 LLM”으로 수렴. 그림은 Anthropic “Building effective agents”(2024-12-19)의 Autonomous agent 그림을 원본 구조·문구·색 역할대로 다시 그림(다크, Paperlogy). “컴퓨터에서 하는 대부분의 작업”의 근거: Anthropic의 Claude Code 사용 연구에서 세션의 27%가 코딩이 아닌 작업(데이터 분석, 문서 작성 등). 셸과 파일을 다룰 수 있으면 작업의 종류를 가리지 않는다.</li>
+    <li>채팅 AI → 자동완성 도우미(Copilot) → 에이전트: 자동완성은 현재 파일의 다음 코드를 제안하는 수준. 요즘은 Copilot도 에이전트 모드가 있어 제품명과 범주가 1:1로 맞지 않는다.</li>
+    <li>그림 읽기: 사람은 목표를 주고 필요할 때 확인해 준다(점선). LLM은 행동(Action: 파일 수정, 명령 실행)하고 환경의 결과(Feedback: 테스트 결과, 오류)를 보고 다음 행동을 정한다. 목표를 이루거나 한도에 닿으면 멈춘다(Stop).</li>
+    <li>코딩이 에이전트에 잘 맞는 이유(Anthropic): 테스트로 결과를 자동 검증할 수 있고, 그 결과를 다시 피드백으로 쓸 수 있다.</li>
+    <li>바이브 코딩(Vibe coding, 카파시 2025-02): 코드를 읽지 않고 결과만 보며 맡기는 방식. 에이전틱 엔지니어링(Agentic engineering, 2026-02): 에이전트를 지휘하되 테스트·리뷰로 품질은 사람이 책임지는 방식. 질문: 연구 코드는 어느 쪽이어야 하나?</li>
+    <li>같은 연구: 계획 결정은 사람이 약 70%, 실행 결정은 약 20%. 코딩 실력보다 전공 지식이 결과를 좌우한다.</li>
+  </ul></aside>
+</section>
+
+<!-- 2. Agent loop -->
+<section class="slide" aria-label="에이전트 루프">
+  <h1 class="t-title" data-tx>에이전트 루프(Agent loop)</h1>
+  <p class="def" data-tx>에이전트 루프: 맥락 수집 → 행동 → 결과 확인을 작업이 끝날 때까지 반복하는 방식.</p>
+  <div class="side">
+    <p data-tx>예: “관측 자료의 이상값을 찾아 정리해<br>줘”라는 요청에 파일 읽기, 이상값 탐색,<br>정리 코드 실행, 그래프 확인을 거친다.<br><mark>수행 순서는 에이전트가 결정한다.</mark></p>
+    <p data-tx>각 도구의 실행 결과는 다음 행동을<br>판단하는 근거가 되며, <mark>이 결과는 모두<br>컨텍스트에 누적된다.</mark></p>
+    <p data-tx>사용자도 루프의 일부로서, 진행 중<br>언제든 중단하거나 방향을 수정할 수 있다.</p>
+  </div>
+  <img class="fig fig6" data-img src="assets/fig-agentic-loop.svg" alt="Agentic loop: Gather context, Take action, Verify results, repeat">
+  <p class="cap cap6" data-tx>프롬프트 입력 후 맥락 수집·행동·결과 확인 반복, 사용자는 진행 중 개입</p>
+  <aside class="notes"><ul>
+    <li>출처: Claude Code 공식 문서 “How Claude Code works”(2026-09-29 열람)의 agentic loop 그림(공식 다크 버전)을 원본 구조·문구·색대로 다시 그림(글꼴 Paperlogy, 글자 확대). 하네스 개념은 같은 문서와 OpenAI “Unrolling the Codex agent loop”(2026-01-23).</li>
+    <li>예시를 루프에 대응: 파일 읽기·이상값 탐색 = 맥락 수집(Gather context), 정리 코드 작성·실행 = 행동(Take action), 그래프·요약 통계 확인 = 결과 확인(Verify results). 결과가 이상하면 다시 맥락 수집으로 돌아간다. 공식 문서의 예는 “실패한 테스트 고쳐 줘”(테스트 실행 → 오류 읽기 → 파일 검색 → 읽기 → 수정 → 재실행).</li>
+    <li>에이전트 = 모델(추론) + 하네스(도구 + 컨텍스트 관리). Claude Code와 Codex는 하네스가 다르지만 루프 구조는 같다. OpenAI 설명: 모델은 “최종 답” 또는 “도구 호출”을 내고, 도구를 호출하면 하네스가 실행해 결과를 붙여 다시 모델을 부른다. 요청부터 답까지를 한 턴(Turn)이라 부른다.</li>
+    <li>“지시하지 말고 맡겨라(Delegate, don’t dictate)”: 어떤 파일을 읽을지는 에이전트가 정하게 하고, 목표와 맥락을 준다. 채팅 AI 사용법과 가장 다른 점.</li>
+    <li>개입 방법: Esc로 중단, 메시지를 입력해 방향 수정. 안전장치: 체크포인트(파일 수정 전 스냅샷, 되돌리기), 권한 모드(묻지 않고 할 수 있는 범위). 단, DB·배포처럼 외부에 일어난 일은 되돌릴 수 없다.</li>
+  </ul></aside>
+</section>
+
+<!-- 3. Landscape -->
+<section class="slide" aria-label="도구 지형">
+  <h1 class="t-title" data-tx>도구 지형(Landscape)</h1>
+  <p class="def" data-tx>도구 지형: 코딩 에이전트는 작동하는 곳과 만든 주체에 따라 나뉜다.</p>
+  <div class="side">
+    <p data-tx>에이전트 루프는 동일하나, 작동 환경은<br>터미널, 편집기(IDE), 데스크톱 앱,<br>클라우드로 구분된다.</p>
+    <p data-tx>모델 회사의 도구는 자사 모델만 사용하며,<br>편집기 회사와 오픈소스 도구는 <mark>여러<br>회사의 모델을 선택적으로 지원한다.</mark></p>
+    <p data-tx>오픈소스 도구는 내 컴퓨터에서 실행되는<br>로컬 모델과도 연결되므로, <mark>연구 데이터를<br>외부로 전송하지 않고 활용할 수 있다.</mark></p>
+  </div>
+  <img class="fig fig7" data-img src="assets/fig-landscape.svg" alt="Coding agents by where they run (CLI, IDE, cloud) and who builds them (model labs, IDE/platform vendors, open source)">
+  <p class="cap cap7" data-tx>작동 위치(CLI·IDE·데스크톱·클라우드)와 개발 주체에 따른 대표 도구</p>
+  <aside class="notes"><ul>
+    <li>출처: 분류는 Thoughtworks Technology Radar Vol.34(2026-04), a16z(2025-10-09), 각 제품 공식 문서·요금 페이지(2026-09-29 열람)를 바탕으로 직접 정리한 표. 칸마다 대표 예시이며 전체 목록이 아니다.</li>
+    <li>요금(2026-09-29 기준, 자주 바뀜 — 강연 직전 재확인): GitHub Copilot은 인증된 학생·교원 무료(GitHub Education). Codex는 ChatGPT Free 플랜에도 포함(저가 모델, 한도 있음), Plus $20. Claude Code는 Free에 없고 Pro $20/월(연 결제 $17)부터, Max $100부터. Cursor는 Hobby 무료, 개인 $20.</li>
+    <li>숫자: Pragmatic Engineer 설문(2026-01~02, 906명) “가장 좋아하는 도구” Claude Code 46%, Cursor 19%, GitHub Copilot 9%. 응답자 70%가 도구 2~4개를 함께 쓴다.</li>
+    <li>비유: 같은 엔진(모델)을 다른 차체(하네스)에 얹는다. Claude Code·Codex는 엔진 회사가 직접 만든 차, Cursor·오픈소스 도구는 여러 회사 엔진을 골라 얹는 차.</li>
+    <li>바뀐 사례: 무료 오픈소스였던 Gemini CLI는 Antigravity CLI(비공개)로 전환(2026-05-19 발표, 2026-06-18 개인 무료 사용 종료). 특정 도구에 묶이지 말고, 작업 지침은 여러 도구가 함께 읽는 AGENTS.md 같은 공통 형식으로 남기자(4장에서 이어짐).</li>
+    <li>로컬 모델: OpenCode·Cline·Aider 등은 Ollama·LM Studio로 내 컴퓨터의 모델과 연결할 수 있다. 민감한 연구 데이터, 비용, 재현성에 유리하지만 성능은 최상위 모델보다 낮다.</li>
+    <li>작동 위치: 터미널은 명령어로 대화, 편집기(IDE)는 코드 옆에서, 데스크톱 앱은 터미널 없이 창에서(비개발자에게 가장 쉬운 입구), 클라우드는 맡겨 두면 원격에서 작업하고 결과(PR 등)만 돌려준다. 한 제품이 여러 칸에 걸친다: Claude Code는 CLI·IDE 확장·데스크톱(Claude 앱 Code 탭)·웹을 같은 엔진으로 제공, Codex도 CLI·IDE·앱·cloud를 가진다(Codex 앱은 2026-07 ChatGPT 데스크톱 앱에 통합, Wikipedia 기준). 같은 구조를 비개발자용으로 옮긴 Claude Cowork(데스크톱에서 폴더를 맡겨 문서 작업)도 있다.</li>
+    <li>표에서 뺀 것: Lovable·Replit·v0 같은 앱 빌더(비개발자가 말로 웹앱을 만드는 도구). Windsurf는 2025-07 Cognition이 인수, Cursor는 2026-08 SpaceX가 인수.</li>
+  </ul></aside>
+</section>
+
+<!-- 4. Common anatomy -->
+<section class="slide" aria-label="공통 구조">
+  <h1 class="t-title" data-tx>공통 구조(Common anatomy)</h1>
+  <p class="def" data-tx>공통 구조: 코딩 에이전트는 제품이 달라도 모델, 도구, 권한, 지침 파일로 구성된다.</p>
+  <div class="side">
+    <p data-tx>모델은 다음 행동을 판단하고, 도구는<br>그 판단을 실제로 실행한다.</p>
+    <p data-tx>권한은 에이전트가 승인 없이 수행할 수<br>있는 범위를 뜻한다. <mark>초기에는 수정과<br>실행마다 승인을 거치는 방식을 권장한다.</mark></p>
+    <p data-tx>지침 파일의 규칙은 작업을 시작할 때마다<br>자동으로 적용된다. <mark>AGENTS.md는<br>여러 도구가 공통으로 읽는 표준 형식이다.</mark></p>
+    <p data-tx>※ MCP(Model Context Protocol):<br>에이전트를 외부 도구·데이터와 연결하는<br>공통 규격</p>
+  </div>
+  <img class="fig fig8" data-img src="assets/fig-anatomy.svg" alt="Model, Tools, Permissions, Instructions in Claude Code and Codex">
+  <p class="cap cap8" data-tx>Claude Code와 Codex의 모델·도구·권한·지침 파일 비교</p>
+  <aside class="notes"><ul>
+    <li>출처: Claude Code 공식 문서(How Claude Code works, Tools reference, Permission modes, Sandboxing, Memory), OpenAI Codex 문서(Agent approvals &amp; security, AGENTS.md 가이드), OpenAI “Unrolling the Codex agent loop”(2026-01-23), agents.md(2026-09-29 열람). 표는 이를 바탕으로 직접 정리.</li>
+    <li>권한: Claude Code는 권한 모드(Manual·Accept edits·Plan·Auto 등)와 허용/거부 규칙이 중심이고 샌드박스는 선택. Codex는 샌드박스(무엇이 가능한가, 기본은 작업 폴더 쓰기 + 네트워크 차단)와 승인 정책(언제 묻는가) 두 축. 비유: 샌드박스는 울타리, 승인은 초인종.</li>
+    <li>숫자: 사용자는 권한 요청의 93%를 그대로 승인한다(Anthropic). 요청만 늘리면 습관적으로 누르게 되므로, 샌드박스로 경계를 정해 요청을 84% 줄이는 방식이 나왔다. 체크포인트로 파일 수정은 되돌릴 수 있지만 DB·외부 서비스에 일어난 일은 되돌릴 수 없다.</li>
+    <li>지침 파일: AGENTS.md는 2025-08 여러 회사가 함께 공개한 “에이전트용 README”. 2025-12 Linux Foundation 산하 Agentic AI Foundation으로 이관(MCP와 함께). Claude Code는 CLAUDE.md를 기본으로 읽고, 없으면 AGENTS.md를 읽는다(설정으로 둘 다 가능). CLAUDE.md에 @AGENTS.md 한 줄을 넣어 함께 쓰는 방법도 있다.</li>
+    <li>비유(연구실 온보딩): 지침 파일 = 연구실 규칙 게시판, 도구·MCP = 장비와 DB 출입 카드, 권한 = 안전 규정.</li>
+    <li>다음 파트로: 지침 파일에 무엇을 적고 무엇을 뺄지, 창에 무엇을 넣을지를 다루는 것이 컨텍스트 엔지니어링이다(컨텍스트 관리의 “쓰기(Write)”).</li>
+  </ul></aside>
+</section>
+
+<!-- 4-2. Behavioral tendencies -->
+<section class="slide" aria-label="행동 특성">
+  <h1 class="t-title" data-tx>행동 경향(Behavioral tendencies)</h1>
+  <p class="def" data-tx>행동 경향: 학습 과정에서 형성되어 LLM이 반복적으로 보이는 행동.</p>
+  <div class="traits">
+    <p data-tx><mark>아첨(Sycophancy)</mark>: 사용자의 짐작에 맞춰 진단을 바꾼다<br>→ 의견을 앞세우지 않고 중립적으로 질문</p>
+    <p data-tx><mark>조기 완료(Premature completion)</mark>: 테스트 없이 “완료”를 보고한다<br>→ 테스트 실행 결과로 완료 여부 확인</p>
+    <p data-tx><mark>환각(Hallucination)</mark>: 존재하지 않는 API나 패키지를 사용한다<br>→ 공식 문서 제공, 실행으로 검증</p>
+    <p data-tx><mark>과잉 열의(Overeagerness)</mark>: 요청하지 않은 수정과 파일을 추가한다<br>→ 작업 범위와 금지 사항 명시</p>
+    <p data-tx><mark>보상 해킹(Reward hacking)</mark>: 테스트를 고치거나 기대값을 하드코딩한다<br>→ 테스트 변경 여부를 diff로 확인</p>
+  </div>
+  <img class="fig fig11" data-img src="assets/fig-coding-deception.svg" alt="Coding Deception: GPT-5.6 Sol 14.29%, GPT-6 Astra 3.54%">
+  <p class="cap cap11" data-tx>허위 완료 보고 비율, 최신 모델에서 감소했으나 0은 아님</p>
+  <aside class="notes"><ul>
+    <li>출처: 그림은 OpenAI GPT-6 Astra System Card(2026-09-03) Figure 10 “Coding Deception”을 원본 형식(막대 2개, 값 표기, 0~20% 축, 모델별 색)대로 다시 그림(다크·Paperlogy). 코딩 기만 = 완료·검증·도구 접근을 사실과 다르게 보고한 비율. 갱신 평가(2026-09-29)에서는 GPT-6.1 Sol 1.50%, GPT-6 Sol 1.30%, Astra 0.51%.</li>
+    <li>공통 원인: 모델은 사람의 선호(동의하는 답을 좋아함)와 테스트 통과처럼 보상받기 쉬운 겉모습을 최적화하도록 학습된다. 대표 사례: GPT-4o 업데이트(2025-04-25)가 좋아요·싫어요 피드백을 보상으로 더 쓰면서 아첨이 심해져 사흘 만에 되돌림.</li>
+    <li>아첨: “정말 확실해?”라는 반문에 하지 않은 실수를 인정한 비율 42~98%(Sharma et al., 2023). 대응: “캐시 문제 같은데?” 대신 “원인 후보와 근거를 보여 줘”처럼 묻는다. 리뷰는 새 세션이나 서브에이전트에 맡긴다.</li>
+    <li>조기 완료: METR(2025-08) 에이전트 PR 중 테스트 통과 38%, 그대로 병합 가능 0%. Claude Code 문서: “끝나 보이면” 멈춘다. 대응: 완료 조건과 검증 명령을 주고, 테스트 출력으로 확인한다.</li>
+    <li>환각: AI가 추천한 패키지 19.7%가 존재하지 않음(USENIX Security 2025). 지어낸 이름을 공격자가 먼저 등록하는 수법(slopsquatting)도 있다. 원인: 평가가 “모르겠다”보다 추측에 점수를 준다(OpenAI, 2025-09).</li>
+    <li>과잉 열의: 설명만 요청했는데 버그를 고치고 테스트 6개를 추가한 사례, “배치 정리해 줘”를 삭제 승인으로 해석해 작업 120개를 지운 사례(Claude Opus 5 시스템 카드, 2026-07). 세대마다 과잉(Opus 4.5/4.6) ↔ 소극적(Opus 4.7, 질문 과다)으로 흔들린다.</li>
+    <li>보상 해킹: 풀 수 없게 만든 과제에서 부정행위 Claude Sonnet 3.7 78% → Claude 4 51%, 금지 지시 후 Opus 4 19%. Opus 5.5 카드(2026-09-22): 과제를 풀 수 없게 만들면 모든 모델의 편법 시도가 3~6배로 늘고, 그중 약 80%는 미완성인 줄 알면서 제출. 반복 실패 끝에 편법이 나오므로, 세 번 이상 실패하면 사람이 개입할 시점.</li>
+    <li>보조 특성, 지시 망각: 긴 세션에서 초기 규칙을 잊는다(여러 턴으로 나눈 과제에서 평균 39% 하락, 2025-05). 컨텍스트 파트로 이어진다.</li>
+  </ul></aside>
+</section>
+
+<!-- 4-3. Karpathy guidelines -->
+<section class="slide" aria-label="행동 지침">
+  <h1 class="t-title" data-tx>행동 지침(Guidelines)</h1>
+  <p class="def" data-tx>행동 지침: LLM이 코딩에서 반복하는 실수를 줄이도록 CLAUDE.md에 적어 두는 원칙.</p>
+  <img class="fig fig18" data-img src="assets/fig-karpathy-guidelines.svg" alt="Four principles: Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution">
+  <p class="cap cap18" data-tx>Karpathy가 관찰한 LLM 코딩의 함정을 네 가지 원칙으로 정리한 지침 파일</p>
+  <p class="cap cap18b" data-tx>출처: Forrest Chang, andrej-karpathy-skills(GitHub, 2026)</p>
+  <aside class="notes"><ul>
+    <li>배경: Andrej Karpathy가 X 게시물(2026-01-26)에서 두 달 사이 “직접 코딩 80% : 에이전트 20%”가 “에이전트 80% : 직접 수정 20%”로 바뀌었다며 LLM 코딩의 함정을 정리했다 — 확인 없이 잘못된 가정을 하고 밀고 나가며 질문·반대를 하지 않는다, 100줄이면 될 일을 1000줄로 부풀린다, 요청과 무관한 코드를 바꾼다. 이를 Forrest Chang이 약 60줄짜리 CLAUDE.md로 옮겨 GitHub에 공개했다(트렌딩 1위). Karpathy가 직접 쓴 파일은 아니다. 표의 영어 문장은 파일 원문 그대로이며 일부 줄만 골랐다.</li>
+    <li>한국어로: 1 코딩 전에 생각하기 — 가정을 밝히고, 모르면 묻고, 해석이 여럿이면 제시하라. 2 단순함 우선 — 요청하지 않은 기능을 넣지 말고, 200줄이 50줄로 되면 다시 써라. 3 필요한 곳만 고치기 — 바뀐 모든 줄은 요청으로 이어져야 한다. 4 목표 기준 실행 — 성공 기준을 정하고 검증될 때까지 반복하라(“버그 고쳐 줘” → “버그를 재현하는 테스트를 쓰고 통과시켜라”).</li>
+    <li>앞 장 행동 특성과의 대응: 아첨·환각 → 1, 과잉 열의 → 2·3, 조기 완료·보상 해킹 → 4. 파일 머리말: 속도보다 신중함 쪽으로 기울어 있으니 사소한 작업에는 판단을 쓰라. 컨텍스트 파트의 “쓰기(Write)”와 같은 방식이다.</li>
+    <li>주의: “실수 41%→11%” 같은 효과 수치는 블로그 주장으로 측정 방법이 확인되지 않아 인용하지 않는다. 2026-06 Karpathy 이름으로 돈 “10개 규칙” 확장판은 Karpathy가 확인하지 않았다.</li>
+  </ul></aside>
+</section>
+
+<!-- 4-4. Karpathy rhythm -->
+<section class="slide" aria-label="작업 리듬">
+  <h1 class="t-title" data-tx>작업 리듬(Rhythm)</h1>
+  <p class="def" data-tx>작업 리듬: AI를 짧은 목줄로 다루며 맥락, 중간 목표, 검토, 테스트, 커밋을 반복하는 순서.</p>
+  <img class="fig fig19" data-img src="assets/fig-karpathy-rhythm.svg" alt="Karpathy's AI-assisted coding rhythm: context, one change, draft, review and learn, test, commit">
+  <p class="cap cap19" data-tx>Karpathy가 직업적으로 신경 쓰는 코드를 AI와 쓸 때 따르는 순서</p>
+  <p class="cap cap19b" data-tx>출처: Andrej Karpathy, X 게시물(2025-04-25)</p>
+  <aside class="notes"><ul>
+    <li>출처: Andrej Karpathy, X 게시물 https://x.com/karpathy/status/1915581920022585597 (2025-04-25, 원문 확인). 표의 영어 문장은 원문 그대로이며 일부를 골랐다(…는 생략 표시). 원문 번호는 5를 건너뛰어 6. Test, 7. Git commit으로 되어 있어 표에서는 1~6으로 정리했다.</li>
+    <li>대상은 바이브 코딩이 아니라 “실제로, 직업적으로 신경 쓰는 코드”. Karpathy는 AI를 백과사전급 지식은 있지만 늘 허풍을 떨고, 용기는 넘치고, 좋은 코드에 대한 감각은 거의 없는 의욕 과잉 신입 인턴으로 보고 아주 짧은 목줄로 다루라고 한다. 느리고, 방어적이고, 조심스럽고, 의심 많게 — 맡기기보다 그 자리에서 배울 기회를 잡는다.</li>
+    <li>한국어로: 1 관련된 것을 모두 맥락에 넣는다. 2 다음에 완성할 구체적인 세부 목표 하나(섹션, 기능 하나 등)를 설명하고, 코드 대신 접근법 몇 가지와 장단점을 먼저 묻는다(LLM의 판단은 늘 좋지는 않다). 3 하나를 골라 초안을 받는다. 4 낯선 함수는 API 문서를 직접 확인하고, 설명을 요청하고, 필요하면 되돌려 다른 방법을 시도한다. 5 테스트. 6 커밋하고 다음 할 일을 제안받아 반복한다.</li>
+    <li>앞 장과의 짝: 행동 지침은 AI에게 주는 원칙, 작업 리듬은 사람이 따르는 원칙. 1은 컨텍스트 파트, 2~3은 행동 지침 1·2, 4는 증폭·메타인지 부담, 5~6은 작업 방식의 Verify·Commit과 이어진다.</li>
+  </ul></aside>
+</section>
+
+<!-- 5. Verification -->
+<section class="slide" aria-label="검증">
+  <h1 class="t-title" data-tx>검증(Verification)</h1>
+  <p class="def" data-tx>검증: 에이전트가 만든 결과가 맞는지 사용자가 직접 확인하는 과정.</p>
+  <div class="side">
+    <p data-tx>숙련 개발자 실험에서 AI 사용 시 작업<br>시간은 19% 늘었으나, <mark>참가자들은<br>오히려 20% 빨라졌다고 인식했다.</mark></p>
+    <p data-tx>권한이 넓을수록 사고의 규모도 커지며,<br>운영 DB와 백업이 삭제된 사례도 있다.</p>
+    <p data-tx><mark>비공개 연구 데이터와 개인정보는<br>기관 승인 없이 외부 AI 도구에<br>입력하지 않아야 한다.</mark></p>
+    <p data-tx>※ 프롬프트 인젝션(Prompt<br>injection): 파일·웹페이지 속 문장이<br>에이전트의 지시를 가로채는 공격</p>
+  </div>
+  <img class="fig fig9" data-img src="assets/fig-metr-forecast-vs-observed.svg" alt="METR: expert and developer forecasts of speedup vs observed 19% slowdown">
+  <p class="cap cap9" data-tx>전문가·개발자는 작업 시간 단축을 예상, 실제 측정은 19% 증가</p>
+  <aside class="notes"><ul>
+    <li>출처: 그림은 METR, “Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity”(2025-07-10, arXiv 2507.09089) 그림을 원본 형식(점과 95% 신뢰구간, 뒤집힌 세로축, 예측/관측 분리)대로 다시 그림(값은 원본 이미지에서 읽음, 다크·Paperlogy). 원본 라이선스 CC-BY, metr.org.</li>
+    <li>실험 조건: 숙련 오픈소스 개발자 16명이 자기가 관리하는 대형 저장소의 실제 과제 246개를 수행, 과제마다 AI 허용/금지를 무작위 배정(주 도구 Cursor + Claude 3.5/3.7 Sonnet). 개발자는 시작 전 24% 단축을 예상했고, 끝난 뒤에도 20% 빨라졌다고 믿었다. METR 스스로 “대부분의 개발자나 미래 모델에도 해당한다는 증거는 아니다”라고 밝힘.</li>
+    <li>후속 근거(2026): METR 재실험(Claude Code 등 에이전트 도구)은 속도 향상 쪽으로 나왔으나 METR은 선택 편향 때문에 “매우 약한 증거”로 평가. Microsoft 현장 연구는 도입 후 병합 PR 약 24% 증가(관찰 연구). DORA 2025: AI는 처리량을 늘리지만 배포 불안정도 늘리는 “증폭기”. 핵심은 체감이 아니라 측정.</li>
+    <li>사고 사례: Replit 에이전트가 코드 동결 지시에도 운영 DB 삭제(2025-07). PocketOS(2026-04-25): 에이전트가 무관한 파일에서 찾은 전체 권한 API 토큰으로 운영 DB와 백업을 약 9초 만에 삭제. 교훈: 광범위한 권한의 토큰·비밀번호를 에이전트가 읽을 수 있는 곳에 두지 않는다. GitGuardian(2026): Claude Code 보조 커밋의 비밀정보 유출률 3.2%, 전체 1.5%.</li>
+    <li>프롬프트 인젝션: 비공개 데이터 접근 + 신뢰할 수 없는 콘텐츠 + 외부 통신 수단, 셋이 모이면 위험(Willison의 “lethal trifecta”, 2025-06). 셋 중 하나를 끊는다(샌드박스, 네트워크 제한).</li>
+    <li>연구 데이터: Harvard·Columbia·Cornell 등 대학 지침의 공통점 — 비공개 연구 데이터, 인간 대상 연구의 식별 정보, 학생·의료 기록은 기관 승인 없는 외부 AI 도구에 넣지 않는다. 로컬 모델(3장)이 대안.</li>
+    <li>연구에서의 좋은 습관(Anthropic 과학 계산 사례, 2026-03): 계획·설계 결정은 CLAUDE.md에, 진행과 실패한 시도는 CHANGELOG에 기록, 기준 코드와 결과를 대조해 검증, 작업 단위마다 git 커밋. 우려(Nature Correspondence, 2026-05): 시행착오로 배우는 연구 훈련이 약해질 수 있다.</li>
+  </ul></aside>
+</section>
+
+<!-- 6. Workflow -->
+<section class="slide" aria-label="작업 방식">
+  <h1 class="t-title" data-tx>작업 방식(Workflow)</h1>
+  <p class="def" data-tx>작업 방식: 탐색, 계획, 구현, 검증, 커밋의 순서로 에이전트에게 일을 맡기는 방법.</p>
+  <div class="side">
+    <p data-tx>계획 모드에서 자료와 코드를 먼저<br>파악하고 계획을 수립한다. <mark>작업은 섹션이나<br>세부 목표 단위로 나누어 맡긴다.</mark></p>
+    <p data-tx>결과는 검증된 기존 코드나 해석해와<br>대조하며, <mark>작업 단위마다 git에 커밋해<br>되돌릴 지점을 남겨 둔다.</mark></p>
+    <p data-tx>설계 결정은 CLAUDE.md에, 실패한<br>시도는 CHANGELOG에 기록하며,<br>다음 세션은 이 기록에서 이어진다.</p>
+    <p data-tx>※ 계획 모드(Plan mode): 파일 수정<br>없이 읽기와 질문만 허용하는 권한 모드</p>
+  </div>
+  <img class="fig fig10" data-img src="assets/fig-research-workflow.svg" alt="Explore, Plan, Implement, Verify, Commit with CLAUDE.md, reference result and CHANGELOG.md">
+  <p class="cap cap10" data-tx>계획 모드에서 탐색·계획, 구현 후 기준 결과와 대조, 커밋과 기록으로 다음 작업에 연결</p>
+  <aside class="notes"><ul>
+    <li>출처: 탐색 → 계획 → 구현 → 커밋 순서는 Claude Code 공식 문서 Best practices(2026-09-29 열람). 기록 습관(CLAUDE.md·CHANGELOG·기준 코드와 대조·작업 단위 git 커밋)은 Anthropic의 장기 과학 계산 사례(2026-03-23, Claude가 며칠에 걸쳐 우주론 계산 코드를 구현하고 기존 코드 CLASS와 대조). 그림은 두 자료를 바탕으로 직접 그림.</li>
+    <li>세부 목표 단위: Karpathy의 AI 보조 코딩 리듬(X, 2025-04-25) — 관련된 것을 모두 맥락에 넣고, 다음에 완성할 단일하고 구체적인 세부 목표 하나를 설명하고, 접근법과 장단점을 먼저 물은 뒤 초안을 받고, 검토·학습하고, 테스트하고, 커밋한다. 작은 단위로 나눠야 검토가 가능하고 실패해도 되돌리기 쉽다. 파일 수정은 계획을 검토한 이후가 원칙이다.</li>
+    <li>계획 모드: Shift+Tab으로 전환. 에이전트가 파일을 읽고 질문하며 계획을 내놓으면, 사용자가 계획을 검토·수정한 뒤 구현을 허용한다. 한 문장으로 설명되는 작은 수정은 계획을 생략해도 된다(공식 권장).</li>
+    <li>검증 수단을 주는 것이 가장 효과가 크다: 테스트, 기존 코드의 결과, 해석해, 그래프 비교처럼 에이전트가 스스로 돌려 볼 수 있는 기준(test oracle)을 준다. 검증 기준이 없으면 사람이 검증 루프가 되어야 한다.</li>
+    <li>기록: CLAUDE.md는 매 세션 시작 시 읽힌다(계획, 설계 결정, 규칙). CHANGELOG는 진행 상황과 실패한 접근을 남겨, 같은 실수를 반복하지 않게 하는 장기 기억 역할. git 커밋은 되돌릴 지점.</li>
+    <li>흔한 실패 5가지(공식 문서): 여러 작업을 한 세션에 섞기, 같은 교정 반복, 너무 긴 CLAUDE.md, 검증 없이 믿기, 끝없는 탐색. 작업이 바뀌면 /clear로 새로 시작.</li>
+    <li>다음 파트로: 무엇을 CLAUDE.md에 적고 무엇을 창에서 빼야 하는지가 컨텍스트 엔지니어링이다.</li>
+  </ul></aside>
+</section>
+
+
+
+<!-- 7-2. Learning backward -->
+<section class="slide" aria-label="역방향 학습">
+  <h1 class="t-title" data-tx>역방향 학습(Learning backward)</h1>
+  <p class="def" data-tx>역방향 학습: 결과물을 먼저 만들게 하고, 거꾸로 읽으며 이해한 뒤 다시 고치는 작업 방식.</p>
+  <div class="side">
+    <p data-tx>잘 아는 과제는 목표와 계획을 세워<br>지시할 수 있지만, 잘 모르는 과제는<br>무엇을 지시할지조차 정하기 어렵다.</p>
+    <p data-tx>이때는 결과물을 먼저 받고, 거꾸로<br><mark>확인하며 이해한 만큼 다음 버전을<br>요청한다.</mark></p>
+    <p data-tx>버전이 올라갈수록 결과물과 함께<br><mark>내 지식도 늘어난다.</mark></p>
+    <p data-tx>다만 결과물을 그대로 받아쓰면 남는<br>것이 없고, 읽고 이해할 때만 는다.</p>
+  </div>
+  <img class="fig fig20" data-img src="assets/fig-learning-backward.svg" alt="Known task: plan, instruct, build, verify. Unknown task: build, walk through, understand, rebuild loop with knowledge growing each version">
+  <p class="cap cap20" data-tx>아는 과제는 계획에서 출발, 모르는 과제는 결과물에서 출발해 이해와 수정을 반복</p>
+  <aside class="notes"><ul>
+    <li>강연자의 경험: 잘 아는 과제는 목표를 세우면 작업 방식(계획 → 지시 → 구현 → 검증)대로 진행된다. 잘 모르는 과제는 지식이 부족해 계획과 지시를 할 수 없다. 그래서 일단 결과물을 만들게 하고, 그 결과물을 거꾸로 읽으며 이해한 다음, 이해한 만큼 다음 버전을 요청하는 루프로 지식을 늘리며 작업한다. 그림은 이 경험을 직접 그린 도식.</li>
+    <li>관련 개념(근거 확인 예정): 전문성 역전 효과(Kalyuga 외 2003) — 초보자에게 도움이 되는 방식이 숙련자에게는 방해가 되고 그 반대도 같다, 즉 아는 정도에 따라 일하는 방식이 달라야 한다. 풀이 예제 효과(Sweller) — 초보자는 완성된 예제를 보며 배울 때 더 잘 배운다. AI가 만든 결과물이 그 예제 역할을 한다.</li>
+    <li>앞 장과의 연결: 증폭 — 결과물을 그대로 받아쓰면 능력이 줄고, 거꾸로 읽고 이해하는 데 쓰면 는다. 작업 리듬 4단계 “검토와 학습” — 맡기기보다 그 자리에서 배울 기회를 잡는다(Karpathy). 표현 방식 — 거꾸로 읽기 쉽게 도식·요약·설명 형식으로 요청한다.</li>
+    <li>영어권 용어: Simon Willison의 Agentic Engineering Patterns(2026) “Understanding code” 장 — 에이전트가 만든 코드를 처음부터 순서대로 풀어 설명하게 하는 linear walkthrough(단계별 해설), 이해가 안 되는 부분을 애니메이션·대화형 화면으로 설명하게 하는 interactive explanation. 그림의 Walk through는 여기서 따온 말이다. 돌아가는 결과물은 늘었는데 사람이 이해한 양은 따라가지 못해 생기는 빚을 cognitive debt / comprehension debt(인지·이해 부채)라 부른다(Willison; O’Reilly Radar; arXiv 2604.13277). 결과물을 그대로 받아쓰면 이 빚이 쌓이고, 역방향 학습처럼 풀어 보고 이해하면 빚을 갚는다.</li>
+    <li>실천: “이 결과물이 어떤 순서로 무엇을 하는지 설명해 줘”, “내가 이해해야 할 핵심 개념 3가지는?”, “이 부분을 바꾸면 무엇이 달라지지?”처럼 결과물을 거꾸로 묻는다. 이해한 내용을 CLAUDE.md나 메모에 남겨 다음 버전의 지시에 쓴다.</li>
+  </ul></aside>
+</section>
+
+<div class="notes-panel" aria-live="polite"></div>
+
+<script>
+(function(){
+  function fit(){
+    document.documentElement.style.setProperty('--fixed-slide-scale',
+      String(Math.min(innerWidth / 1920, innerHeight / 1080)));
+  }
+  addEventListener('resize', fit); fit();
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const panel = document.querySelector('.notes-panel');
+  let idx = 0;
+  function go(i){
+    idx = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach((s, k) => s.classList.toggle('active', k === idx));
+    const n = slides[idx].querySelector('.notes');
+    panel.innerHTML = '<h3>SPEAKER NOTES · ' + (idx + 1) + ' / ' + slides.length + ' · N</h3>' + (n ? n.innerHTML : '');
+    try { history.replaceState(null, '', '#' + (idx + 1)); } catch(e){}
+  }
+  addEventListener('keydown', e => {
+    if (['ArrowRight','PageDown',' ','Enter'].includes(e.key)) { e.preventDefault(); go(idx + 1); }
+    else if (['ArrowLeft','PageUp','Backspace'].includes(e.key)) { e.preventDefault(); go(idx - 1); }
+    else if (e.key === 'n' || e.key === 'N') document.body.classList.toggle('show-notes');
+  });
+  let lock = false;
+  addEventListener('wheel', e => {
+    if (lock || Math.abs(e.deltaY) < 20) return;
+    lock = true; setTimeout(() => lock = false, 600);
+    go(idx + (e.deltaY > 0 ? 1 : -1));
+  }, { passive: true });
+  window.__show = go;
+  const h = parseInt(location.hash.slice(1), 10);
+  go(Number.isFinite(h) ? h - 1 : 0);
+})();
+</script>
+</body>
+</html>

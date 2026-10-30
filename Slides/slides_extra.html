@@ -1,0 +1,234 @@
+<!-- New slides for assembled decks (tools/assemble_deck.py pulls sections from here by aria-label).
+     Placeholders: content to be written. Same layout rules as DESIGN_RULES.md. -->
+
+<section class="slide" aria-label="표지">
+  <h1 class="cover-title" data-tx>AI 에이전트와 함께 연구하기</h1>
+  <p class="cover-sub" data-tx>대학원생을 위한 생성형 AI 활용</p>
+  <img class="fig cover-fig" data-img src="assets/fig-cover.svg" alt="The Claude Code mascot beside a document whose lines fill in one by one; a check appears and the mascot turns around">
+  <p class="cover-meta" data-tx>김경호 · 한국환경연구원(KEI)<br>전남대학교 문화전문대학원 · 2026년 10월</p>
+  <aside class="notes"><ul>
+    <li>강연 90분: 슬라이드 약 60분 + 시연 약 30분(Claude 앱, Codex 앱). 시연은 발표 자료와 별도로 진행하며, 슬라이드에는 시연 위치를 표시하지 않는다.</li>
+    <li>표지 그림: Claude Code의 마스코트가 옆에서 문서를 한 줄씩 채우고, 완성되면 확인 표시와 함께 한 바퀴 돈다(HTML 애니메이션, PPTX는 영상).</li>
+    <li>청중: AI를 거의 써보지 않았거나 채팅만 써 본 인문·사회계 대학원생. 기술 용어는 최소로, 논문 작성 장면으로 설명.</li>
+  </ul></aside>
+</section>
+
+<section class="slide" aria-label="오늘 다룰 것">
+  <h1 class="t-title" data-tx>오늘 다룰 것</h1>
+  <p class="def" data-tx>오늘 다룰 것: AI 에이전트를 연구의 조수로 쓰기 위한 세 가지 질문.</p>
+  <div class="rows5">
+    <div class="row"><span class="no" data-tx>1</span><span class="hd" data-tx>원리</span><span class="ds" data-tx>AI는 어떻게 작동하고, 에이전트는 무엇이 다른가</span></div>
+    <div class="row"><span class="no" data-tx>2</span><span class="hd" data-tx>주의</span><span class="ds" data-tx>어디서 틀리고, 어떻게 확인하는가</span></div>
+    <div class="row"><span class="no" data-tx>3</span><span class="hd" data-tx>활용</span><span class="ds" data-tx>연구에 어떻게 쓰고, 무엇을 밝히는가</span></div>
+  </div>
+  <aside class="notes"><ul>
+    <li>구성: 도입(표지·오늘 다룰 것·전제) → 1 원리(용어·LLM·AI 에이전트·도메인 특화 에이전트·컨텍스트·컨텍스트 창) → 2 주의(행동 경향·획일화·검증) → 3 활용(논문 작성 단계별 활용·사람 개입·메타인지 부담·역방향 학습·AI 사용 공개) → 정리.</li>
+    <li>다음 장 "전제"의 세 믿음이 세 챕터를 예고한다: 뇌도 다음 말을 예측한다 → 1 원리(LLM), 평균 이상의 초안을 비슷하게 준다 → 2 주의(획일화), 생각을 맡기면 줄고 넓히는 데 쓰면 는다 → 3 활용.</li>
+  </ul></aside>
+</section>
+
+<section class="slide" aria-label="용어">
+  <h1 class="t-title" data-tx>용어(Terms)</h1>
+  <table class="gtable" data-table>
+    <tr><th data-tx>용어</th><th data-tx>뜻</th></tr>
+    <tr><td data-tx>LLM(대규모 언어 모델)</td><td data-tx>방대한 글을 학습해 다음 말을 예측하며 글을 만드는 AI 모델</td></tr>
+    <tr><td data-tx>토큰(Token)</td><td data-tx>모델이 글을 나눠 처리하는 단위(단어나 그 일부)</td></tr>
+    <tr><td data-tx>프롬프트(Prompt)</td><td data-tx>AI에게 주는 질문이나 지시</td></tr>
+    <tr><td data-tx>컨텍스트(Context)</td><td data-tx>답을 만들 때 AI가 함께 보는 글 전체(대화, 올린 파일 등)</td></tr>
+    <tr><td data-tx>터미널(Terminal)</td><td data-tx>마우스 대신 글자로 명령을 입력해 컴퓨터를 다루는 창</td></tr>
+    <tr><td data-tx>CLI(명령줄 인터페이스)</td><td data-tx>터미널에서 명령어로 프로그램을 쓰는 방식(예: Claude Code, Codex)</td></tr>
+    <tr><td data-tx>마크다운(Markdown)</td><td data-tx># 제목, - 목록처럼 기호로 서식을 적는 간단한 글 형식</td></tr>
+    <tr><td data-tx>HTML</td><td data-tx>웹 페이지를 만드는 언어. AI가 표·도식·화면을 만들어 보여 줄 때 쓴다</td></tr>
+  </table>
+  <aside class="notes"><ul>
+    <li>뒤에서 반복해 나오는 말만 골랐다: LLM·컨텍스트(1 원리), 터미널·CLI(Codex 앱 시연), 마크다운·HTML(결과물 형식). 에이전트는 1 원리, 환각은 2 주의 해당 장에서 설명한다.</li>
+    <li>터미널·CLI: 앱 화면(GUI)과 달리 글자 명령으로 컴퓨터를 다룬다. Claude Code와 Codex는 터미널에서 쓰는 CLI 판과 데스크톱 앱 판이 있고, 앱에서도 내부적으로는 파일을 읽고 명령을 실행한다 — 에이전트가 "일을 한다"는 것의 실체. 청중이 직접 터미널을 쓸 필요는 없다는 점을 함께 말한다.</li>
+    <li>마크다운: AI 채팅 답변의 굵은 글씨·목록·표가 이 형식으로 쓰인다. .md 파일로 저장하면 어떤 편집기에서도 열리고, 지침 파일(CLAUDE.md, AGENTS.md)도 마크다운이다. 논문 초안을 마크다운으로 쓰면 AI가 읽고 고치기 쉽다(Word 파일보다 구조가 단순).</li>
+    <li>HTML: Claude 앱의 아티팩트, Codex 앱이 만드는 결과 페이지가 HTML이다. 긴 답을 표·도식·대화형 화면으로 바꿔 보는 데 쓴다(뒤의 "표현 방식" 관련). 이 강연 슬라이드도 HTML로 만들었다.</li>
+  </ul></aside>
+</section>
+
+<section class="slide" aria-label="전제(강연판)">
+  <h1 class="t-title" data-tx>전제(Premises)</h1>
+  <p class="def" data-tx>전제: AI를 사용할 때 받아들이고 있는 세 가지 믿음.</p>
+  <div class="prem">
+    <p class="crit" data-tx>비판: LLM은 의미 없이 다음 단어만 잇는 확률론적 앵무새다</p>
+    <p class="bel" data-tx>→ 사람의 뇌도 다음 말을 예측한다.<br>언어 모델은 뇌와 부분적으로 닮았다.</p>
+    <p class="crit" data-tx>비판: AI를 쓰면 사고력과 추론 능력이 떨어진다</p>
+    <p class="bel" data-tx>→ AI는 증폭기다. 생각을 맡기면 줄고,<br>생각을 넓히는 데 쓰면 는다.</p>
+    <p class="crit" data-tx>비판: AI는 평균적인 결과물만 만든다</p>
+    <p class="bel" data-tx>→ AI는 평균 이상의 초안을 모두에게 비슷하게 준다.<br>완성은 사람이 한다.</p>
+  </div>
+  <img class="fig fig25" data-img src="assets/fig-competency-bifurcation-plain.svg" alt="Competency distribution before AI (dotted) and after AI (coloured), spreading to both sides">
+  <p class="closing2 c1" data-tx><mark>AI는 예측으로 돕고, 사람은 판단으로 완성한다.</mark></p>
+  <p class="closing2 c2" data-tx><mark>도구는 같아도, 쓰는 방식이 결과를 가른다.</mark></p>
+  <aside class="notes"><ul>
+    <li>이 강연용 전제 장(기존 덱의 "전제" + "증폭" 그림). 세 비판은 실제로 제기되는 주장이며, 각 믿음은 근거가 허용하는 범위로 표현을 조정했다(Knowledge/05_ai_beliefs).</li>
+    <li>첫 번째 믿음의 근거: 뇌가 다음 단어를 예측한다(Goldstein 외, Nature Neuroscience 2022; Caucheteux 외, Nature Human Behaviour 2023). 언어 모델과 뇌의 부분적 유사성(Schrimpf 외, PNAS 2021; Caucheteux·King, Communications Biology 2022; Tuckute 외, Nature Human Behaviour 2024). 자세한 내용은 다음 "LLM" 장 노트. 한계: 같다는 뜻이 아니며, 사람은 훨씬 적은 데이터로 배우고 몸·경험·의도와 연결되어 있다.</li>
+    <li>그림(두 번째 믿음과 두 번째 마무리 문장): 점선은 AI 이전, 색 곡선은 AI 이후의 역량 분포 — 가운데로 모이지 않고 양쪽으로 벌어진다. 측정값이 아닌 개념도. 출처: Eero Alvar, “Bodybuilding for the Mind”(YouTube, 2026-09-27)의 도식을 다시 그림. 그는 산업혁명 뒤 헬스장이 생겼듯 AI가 사고를 선택으로 만들면서 "마음의 보디빌딩"이 생긴다고 비유하고, 스스로 엄밀한 증거가 아닌 유추라고 밝힌다.</li>
+    <li>실험 근거(맡기면 준다): 고교 수학 실험(Bastani 외, PNAS 2025) — AI 사용 중 성적은 48% 올랐지만 AI를 뗀 뒤 미사용 집단보다 17% 낮았다(튜터형 설계는 하락 대부분 방지). 숙련 내시경 의사도 AI 사용 뒤 AI 없이 선종 발견율 28.4%→22.4%(2025). (넓히면 는다): Anthropic 실험(2026-01, 52명) — 개념만 물어본 사람은 퀴즈 65% 이상, 통째로 맡긴 사람은 40% 미만. 실천: 먼저 직접 답을 쓰고 AI에게 비판받기, 답 대신 개념과 근거만 묻기, 학습 모드 사용.</li>
+    <li>세 번째 믿음: 다음 "완성" 장. 두 번째 마무리 문장 착안: Eero Alvar — "평균이 낮아지니 경쟁이 줄어 좋다"는 결론은 틀렸고, AI로 스스로를 단련하는 사람은 더 똑똑해진다.</li>
+  </ul></aside>
+</section>
+
+<section class="slide" aria-label="획일화">
+  <h1 class="t-title" data-tx>획일화(Homogenization)</h1>
+  <p class="def" data-tx>획일화: AI 도움을 받은 글이 각각은 나아지지만 서로 비슷해지는 현상.</p>
+  <div class="side">
+    <p data-tx>AI 아이디어를 받아 쓴 이야기는<br>더 새롭고 쓸모 있다는 평가를 받았다.<br>원래 창의성이 낮은 사람일수록 컸다.</p>
+    <p data-tx>그러나 AI 도움을 받은 이야기들은<br><mark>서로 더 비슷해졌다.</mark></p>
+    <p data-tx>AI는 평균 이상의 초안을 모두에게<br>비슷하게 준다. 무엇을 남기고 고칠지<br>판단하는 것이 사람의 몫이다.</p>
+    <p data-tx>※ 실험: 293명이 8문장 이야기를 쓰고<br>600명이 평가, AI 아이디어 0·1·5개</p>
+  </div>
+  <img class="fig fig26" data-img src="assets/fig-homogenization.svg" alt="Bar chart: with 1 or up to 5 GPT-4 ideas, novelty rose 5.4% and 8.1%, usefulness 3.7% and 9.0%; similarity among stories rose by 10.7% and 8.9% of the no-AI spread">
+  <aside class="notes"><ul>
+    <li>연구: Doshi & Hauser, "Generative AI enhances individual creativity but reduces the collective diversity of novel content", Science Advances 10(28) eadn5290, 2024-07-12(PMC11244532, 2026-10-23 원문 확인). 영국 온라인 패널(Prolific)에서 500명 모집, 293명의 이야기 분석. 영어 8문장 짧은 이야기(15~24세 독자 대상, 바다·정글·다른 행성 모험 중 무작위 주제). 조건: AI 없음 / GPT-4 아이디어(세 문장 요약) 1개 / 최대 5개, 아이디어 요청은 선택(AI 조건의 88.4%가 1개 이상 요청). 평가자 600명이 이야기 3,519회 평가(1~9점).</li>
+    <li>그림 왼쪽(개인): AI 없음 대비 새로움(novel·original·rare 평균) 1개 +5.4%, 5개 +8.1%; 쓸모(appropriate·feasible·publishable 평균) 1개 +3.7%, 5개 +9.0%. 창의성 검사(DAT) 점수가 낮은 작가는 5개 조건에서 새로움 +10.7%, 쓸모 +11.5%, 잘 쓴 정도 최대 +26.6%, 재미 최대 +22.6%. 작가 자신의 자기평가는 조건 간 차이가 없었다.</li>
+    <li>그림 오른쪽(집단): 같은 조건 안의 다른 이야기들과의 유사도(OpenAI 임베딩 코사인 유사도×100). AI 없음 조건의 유사도 분포 폭(8.10점) 대비 1개 조건은 그 폭의 10.7%, 5개 조건은 8.9%만큼 더 비슷해졌다(논문이 제시한 표현 방식 그대로). AI가 준 아이디어와의 유사도도 1개 +5.2%, 5개 +5.0%(AI 없음 평균 82.85 대비).</li>
+    <li>두 결과가 모순이 아닌 이유: 독창성·유용성은 평가자가 이야기를 한 편씩 읽고 자기 기대와 비교해 매긴 점수이고, 유사도는 컴퓨터가 같은 조건의 이야기들을 나란히 놓고 계산한 값이다. 한 편씩 보면 새롭지만, 모아 놓으면 서로 닮아 있다.</li>
+    <li>저자 해석: 사회적 딜레마 — 각자는 나아지지만 사회 전체로는 새로운 글의 폭이 좁아진다. AI를 쓴 글이 더 좋은 평가를 받으면 더 쓰게 되고, 다양성은 더 줄 수 있다. 논문 쓰기로 옮기면: AI가 준 아이디어·문장을 그대로 쓰면 다른 사람의 글과 비슷해진다 → 초안은 AI에게서 받아도 무엇을 남기고 바꿀지는 내가 정한다.</li>
+    <li>한계: 2023년 GPT-4, 짧은 창작 과제라 학술 글쓰기와는 다르다. 최신 모델과 긴 글에서는 수치가 다를 수 있다. 같은 방향의 다른 근거: 사람의 아이디어도 ChatGPT를 쓰면 서로 덜 구별됨(Anderson 외, C&C 2024), 서로 다른 모델들도 비슷한 답을 냄("Artificial Hivemind", NeurIPS 2025). 이전 판의 Anthropic 분업 그래프(계획 결정 약 70%는 사람, 실행 결정 약 80%는 Claude)는 기존 덱에 남아 있다.</li>
+  </ul></aside>
+</section>
+
+<section class="slide" aria-label="LLM">
+  <h1 class="t-title" data-tx>LLM(Large Language Model)</h1>
+  <p class="def" data-tx>LLM: 방대한 글을 학습해, 앞의 글을 보고 다음 말을 예측하며 이어 쓰는 모델.</p>
+  <div class="side">
+    <p data-tx>LLM은 수많은 글에서 다음 단어<br>맞히기를 반복하며 언어의 패턴과<br>지식을 익힌다.</p>
+    <p data-tx>입력된 글을 보고 다음 말의 확률을<br>계산해 하나를 출력한다. 출력은 다시<br>입력에 붙어 다음 예측에 쓰인다.</p>
+    <p data-tx>그래서 그럴듯한 글을 잘 쓴다. 다만<br><mark>그럴듯함이 곧 사실은 아니다.</mark></p>
+    <p data-tx>※ 자기회귀(Autoregressive): 자기가 낸<br>출력을 다시 입력으로 받아 다음을<br>예측하는 방식</p>
+  </div>
+  <img class="fig fig24" data-img src="assets/fig-llm.svg" alt="Tokens so far go into the LLM, which gives next-token probabilities; the top token is picked and appended, and the loop repeats (Korean example sentence)">
+  <p class="cap cap24" data-tx>입력으로 다음 말의 확률을 계산해 출력, 출력은 다시 입력이 되어 반복(수치는 예시)</p>
+  <aside class="notes"><ul>
+    <li>그림 읽기: 입력(Input, 회색)이 LLM에 들어가면, 다음에 올 말 후보마다 확률이 나온다. 하나를 골라 출력(Output, 구리색)하고, 그 출력을 입력 끝에 붙여 늘어난 글로 다시 예측한다 — 한 번에 한 토큰씩. 이렇게 자기 출력을 다시 입력으로 쓰며 이어 쓰는 방식을 자기회귀(autoregressive) 생성이라 한다. 사람이 말을 할 때 앞에 한 말을 바탕으로 다음 말을 잇는 것에 빗대면 쉽다. 한 번 낸 말은 되돌리지 않고 그 위에 계속 쌓기 때문에, 앞에서 틀린 말이 뒤로 이어질 수 있다. 예문과 확률은 설명용으로 만든 값. 실제 토큰은 단어보다 잘게 쪼개지기도 한다(한국어는 대개 음절·형태소 단위).</li>
+    <li>학습 두 단계: (1) 사전학습 — 인터넷 글·책 등에서 다음 토큰 맞히기를 수없이 반복해 언어 패턴과 지식을 익힌다. (2) 추가 학습 — 지시를 따르고 대화하도록, 사람의 평가를 반영해 다듬는다(RLHF 등). 그래서 질문에 답하는 조수처럼 행동한다.</li>
+    <li>항상 1등만 고르지는 않는다: 확률에 따라 고르기도 해서 같은 질문에도 답이 조금씩 달라진다. "그럴듯함 ≠ 사실": 확률이 높은 말은 자연스러운 말이지 참인 말이 아니다 — 4파트 "행동 경향"의 환각으로 이어진다. 없는 논문을 그럴듯하게 만들어 내는 이유.</li>
+    <li>"다음 단어 예측일 뿐인가?"(3번 전제의 첫 비판): 사람의 뇌도 다음 말을 예측한다 — 팟캐스트를 듣는 뇌가 단어가 들리기 전에 예측(Goldstein 외, Nature Neuroscience 2022), 뇌는 언어 모델보다 더 먼 단어를 여러 층위에서 예측(Caucheteux 외, Nature Human Behaviour 2023). 언어 모델과 뇌의 부분적 유사성: 다음 단어를 잘 예측하는 모델일수록 뇌 반응을 잘 설명(Schrimpf 외, PNAS 2021; Caucheteux·King 2022 "부분적으로 수렴"), GPT로 고른 문장이 실제로 뇌 언어 영역 반응을 키우거나 줄임(Tuckute 외, Nature Human Behaviour 2024). 모델도 한 단어씩 내지만 미리 계획한다 — 시의 운을 먼저 정하고 문장을 맞춤(Anthropic 해석 연구, 2025-03). 한계: 같다는 뜻이 아니며, "A는 B"를 배워도 "B는 A"를 잘 못 푸는 등 쉬운 변형에 약하다(역전의 저주 2023).</li>
+    <li>원 논문(Bender 외, FAccT 2021)의 중심은 학습 비용, 데이터 편향, 오용 위험이며 이 지적은 지금도 유효하다. 그림은 직접 그림(이전 "예측" 장의 뇌 그림은 기존 덱에 남아 있음).</li>
+  </ul></aside>
+</section>
+
+<section class="slide" aria-label="컨텍스트(강연판)">
+  <h1 class="t-title" data-tx>컨텍스트(Context)</h1>
+  <p class="def" data-tx>컨텍스트: LLM이 출력을 생성할 때 참조하는 토큰의 집합.</p>
+  <div class="side">
+    <p data-tx>입력과 지금까지 생성한 출력을<br>모두 포함한다.</p>
+    <p data-tx>내가 쓴 질문, 올린 파일, AI가 앞서 한<br>답이 모두 컨텍스트에 들어간다.</p>
+    <p data-tx>학습 데이터가 아니라, <mark>이번 호출에<br>넣어 준 토큰만</mark> 본다.</p>
+    <p data-tx>※ 토큰(Token): 모델이 처리하는<br>최소 단위 (영어 약 3.5자 = 1토큰)</p>
+  </div>
+  <img class="fig fig1" data-img src="assets/fig-context-window-large.svg" alt="Turns accumulating in the context window">
+  <p class="cap cap1" data-tx>턴마다 입력·출력 누적, 컨텍스트 증가</p>
+  <aside class="notes"><ul>
+    <li>LLM 장과의 연결: 출력이 다시 입력이 되는 자기회귀가 대화 내내 쌓인 결과가 곧 컨텍스트다. 모델은 이 쌓인 글 전체를 보고 다음 말을 예측한다. 화면의 "질문·파일·앞선 답"은 쉬운 말로 줄인 것이고, 정확한 구성은 시스템 프롬프트, 도구 정의, 메시지(파일·도구 결과 포함), 모델의 출력(Claude Docs "Context windows").</li>
+    <li>출처: 컨텍스트 정의 Anthropic, “Effective context engineering for AI agents”(2025). “입력과 출력 모두 포함”과 구성(시스템 프롬프트·메시지·도구 결과·이미지·문서·도구 정의·thinking 포함 출력)은 Claude Docs “Context windows”. “학습 데이터와 다름”과 토큰 정의·영어 약 3.5자=1토큰은 Claude Docs Glossary. 그림은 Claude Docs “Context windows” 그림을 다크로 가공하고 글자를 키움.</li>
+    <li>Claude Code에서는 CLAUDE.md, 읽은 파일, 명령 실행 결과도 모두 컨텍스트가 된다(Claude Code 문서 “Explore the context window”). 세션을 시작하기만 해도 약 7,850 토큰이 이미 적재된다(문서 예시값). 시연: /context.</li>
+    <li>토큰: Claude 기준 영어 약 3.5자가 1토큰, 언어마다 다르다(Glossary). 사람은 글자를 보지만 모델은 토큰을 본다.</li>
+    <li>그림 읽기: 턴마다 이전 입력(구리색)과 출력(회색)이 전부 다음 입력으로 쌓인다. 이 누적 전체가 컨텍스트다.</li>
+    <li>컨텍스트는 학습 데이터가 아니다. 대화할 때마다 새로 채워지는 입력이다.</li>
+    <li>아래 가위 점선이 창의 한계 → 다음 슬라이드.</li>
+  </ul></aside>
+</section>
+
+<section class="slide" aria-label="컨텍스트 엔지니어링(강연판)">
+  <h1 class="t-title" data-tx>컨텍스트 엔지니어링(Context engineering)</h1>
+  <p class="def" data-tx>컨텍스트 엔지니어링: AI가 볼 정보를 골라 넣고, 필요 없는 것은 빼는 일.</p>
+  <div class="rows4b">
+    <div class="row"><span class="hd" data-tx>적어 두기(Write)</span><span class="ds" data-tx>연구 목적·용어·규칙을 문서로 만들어 매번 함께 준다</span></div>
+    <div class="row"><span class="hd" data-tx>골라 주기(Select)</span><span class="ds" data-tx>지금 작업에 필요한 논문과 자료만 올린다</span></div>
+    <div class="row"><span class="hd" data-tx>줄이기(Compress)</span><span class="ds" data-tx>대화가 길어지면 요약을 받아 새 대화에서 이어 간다</span></div>
+    <div class="row"><span class="hd" data-tx>나누기(Isolate)</span><span class="ds" data-tx>주제가 다르면 대화나 프로젝트를 따로 연다</span></div>
+  </div>
+  <p class="ce-close" data-tx><mark>많이 넣을수록 좋은 것이 아니라, 관련 있는 것만 넣을수록 좋다.</mark></p>
+  <aside class="notes"><ul>
+    <li>앞 장(컨텍스트 창)과의 연결: 창에는 한계가 있고, 넣을수록 정확도가 떨어진다(컨텍스트 부패). 그래서 무엇을 넣고 뺄지 고르는 일이 필요하다. Anthropic은 이를 "원하는 결과의 가능성을 가장 높이는, 가장 작은 정보 집합을 찾는 일"로 정의하고, 한 번의 질문을 잘 쓰는 프롬프트 엔지니어링의 다음 단계로 본다(Anthropic, "Effective context engineering for AI agents", 2025).</li>
+    <li>네 가지 방법 분류: Lance Martin, "Context Engineering for Agents"(LangChain, 2025)의 Write·Select·Compress·Isolate. 화면은 연구자가 Claude 앱·Codex 앱에서 바로 할 수 있는 행동으로 바꿔 쓴 것.</li>
+    <li>앱에서 하는 법: 적어 두기 — Claude 앱 프로젝트의 지침(instructions)에 연구 주제·용어 정의·인용 양식을 적어 두면 대화마다 들어간다. Claude Code·Codex는 CLAUDE.md·AGENTS.md 파일. 골라 주기 — 폴더 전체 대신 필요한 PDF만 첨부, 파일을 지정해서 묻기. 줄이기 — "지금까지 결정한 것을 요약해 줘" 후 새 대화에 붙여 넣기(Claude Code는 /compact). 나누기 — 문헌 정리, 분석, 글쓰기를 다른 대화로(Claude Code는 서브에이전트).</li>
+    <li>기존 context 덱의 "컨텍스트 엔지니어링"(프롬프트 vs 컨텍스트 그림)과 "컨텍스트 관리"(네 가지 방법 그림) 두 장을 한 장으로 줄인 강연판.</li>
+  </ul></aside>
+</section>
+
+<section class="slide" aria-label="검증(강연판)">
+  <h1 class="t-title" data-tx>검증(Verification)</h1>
+  <p class="def" data-tx>검증: AI의 결과는 그럴듯해도 틀릴 수 있으므로, 사람이 직접 확인해야 한다.</p>
+  <div class="side">
+    <p data-tx>AI가 쓴 글의 참고문헌을 확인하니<br>상당수가 없는 논문이거나, 저자·연도·<br>쪽수가 틀렸다.</p>
+    <p data-tx>최신 모델도 다섯 중 하나를 지어냈고,<br>낯설고 좁은 주제일수록 더 많았다.</p>
+    <p data-tx>틀린 인용도 형식은 그럴듯해서,<br>읽기만 해서는 <mark>알아채기 어렵다.</mark></p>
+    <p data-tx>※ 검증 방법: 인용은 원문에서 직접<br>찾아 대조하고, 수정은 바뀐 부분만<br>표시하게 해 하나씩 확인한다.</p>
+  </div>
+  <img class="fig fig27" data-img src="assets/fig-fake-refs.svg" alt="Stacked bars: share of AI-written citations that were fabricated, real but wrong, or correct — GPT-3.5 2023: 55/19/26; GPT-4 2023: 18/20/62; GPT-4o 2025: 20/36/44">
+  <p class="cap cap27" data-tx>AI가 쓴 글의 참고문헌 중 지어낸 것과 정보가 틀린 것의 비율</p>
+  <aside class="notes"><ul>
+    <li>2023 막대: Walters & Wilder, "Fabrication and errors in the bibliographic citations generated by ChatGPT", Scientific Reports 13:14045(2023). 2023년 4월 첫째 주, 42개 주제로 ChatGPT에게 참고문헌이 달린 짧은 논문을 쓰게 함(84편, 인용 636개). 지어낸 인용 GPT-3.5 55%, GPT-4 18%. 실재하는 인용 중 실질적 오류(권·호·쪽, 연도, 저자명 등) GPT-3.5 43%, GPT-4 24%. 그림의 "정보가 틀림" 비율은 이 값을 전체 인용 대비로 환산한 것(GPT-3.5 약 19%, GPT-4 약 20%).</li>
+    <li>2025 막대: Linardon 외, JMIR Mental Health 12:e80371(2025-11). 2025년 6월 GPT-4o로 정신건강 분야 문헌 리뷰 6편(약 2,000단어, 인용 20개 이상) 작성 — 인용 176개 중 지어낸 것 35개(19.9%), 실재하는 141개 중 오류 64개(45.4%, 주로 틀린 DOI). 덜 알려진 주제일수록 지어낸 비율이 높았다(우울증 6%, 폭식장애 28%, 신체이형장애 29%), 같은 주제라도 좁은 주제의 리뷰가 더 많았다(폭식장애 46% vs 17%). 지어낸 것과 틀린 것을 합치면 56%.</li>
+    <li>주의: 두 연구는 과제·분야·검증 방법이 달라 막대끼리 정밀 비교는 어렵다. 그래도 방향은 같다 — 모델이 좋아져도 0이 되지 않는다. 체계적 문헌고찰 재현 연구(Chelli 외, JMIR 2024)에서는 환각 참고문헌이 GPT-3.5 39.6%, GPT-4 28.6%, Bard 91.4%. 웹 검색을 쓰는 최신 모델(GPT-5, Claude Sonnet 4.6, Gemini 3 Flash)도 참고문헌 항목이 완전히 맞는 비율은 50.9%(Rao & Callison-Burch, arXiv 2604.03159, 초록 기준, COLM 2026 예정).</li>
+    <li>검증 방법(논문 쓰기): ① 인용 — 제목·저자·연도·쪽수를 원문(학술 DB, 원 논문 PDF)에서 직접 찾아 대조. DOI도 눌러 본다. ② 요약 — 요약에 나온 주장이 원문 어디에 있는지 위치를 함께 달라고 하고, 그 위치를 직접 읽는다. ③ 수정 — 통째로 받지 말고 "바뀐 부분만 표시해 줘"(Claude 앱), 파일 변경 내역(Codex 앱)으로 하나씩 받아들일지 정한다. ④ 사실·수치 — 원자료와 다시 계산해 본다.</li>
+    <li>이전 판의 METR 실험(숙련 개발자 16명, AI 사용 시 작업 시간 19% 증가인데 본인들은 20% 빨라졌다고 인식, 2025-07)은 기존 덱에 남아 있다 — "느낌을 믿지 말고 확인하라"는 보조 근거로 말로 덧붙일 수 있다.</li>
+  </ul></aside>
+</section>
+
+<section class="slide" aria-label="논문 작성 단계별 활용">
+  <h1 class="t-title" data-tx>논문 작성 단계별 활용(Writing workflow)</h1>
+  <p class="def" data-tx>논문 작성 단계별 활용: 단계마다 AI에 맡길 것과 내가 직접 할 것을 나누는 것.</p>
+  <table class="wtable" data-table>
+    <tr><th data-tx>단계</th><th data-tx>AI에 맡길 것</th><th data-tx>내가 할 것</th></tr>
+    <tr><td data-tx>주제 설정</td><td data-tx>질문 다듬기, 예상 반론 받아 보기</td><td data-tx>연구 질문을 정한다</td></tr>
+    <tr><td data-tx>문헌 검토</td><td data-tx>논문 요약, 쟁점·입장 정리</td><td data-tx>원문을 읽고 인용 부분을 대조한다</td></tr>
+    <tr><td data-tx>구성</td><td data-tx>목차 검토, 논리의 빈틈 지적</td><td data-tx>주장과 순서를 정한다</td></tr>
+    <tr><td data-tx>초안</td><td data-tx>내가 쓴 초안에 대한 비판</td><td data-tx>초안은 직접 쓴다</td></tr>
+    <tr><td data-tx>교정</td><td data-tx>문장 다듬기, 용어·표기 일관성</td><td data-tx>수정안을 골라 받아들인다</td></tr>
+    <tr><td data-tx>인용 확인</td><td data-tx>본문 인용과 참고문헌 목록 대조</td><td data-tx>모든 출처를 원문으로 확인한다</td></tr>
+  </table>
+  <p class="wnote" data-tx>AI에 무엇을 맡겼는지는 기록해 두고, 논문에 밝힌다.</p>
+  <aside class="notes"><ul>
+    <li>원칙: 생각이 필요한 단계(질문 정하기, 초안 쓰기, 주장 결정)는 내가 먼저 하고, AI는 그 결과를 비판·점검하는 쪽에 둔다. 근거: 앞의 "증폭" 장 — 통째로 맡기면 능력이 줄고(고교 수학 실험, AI를 뗀 뒤 17% 낮음), 개념을 묻고 비판받는 데 쓰면 는다(Anthropic 실험, 개념만 물은 사람 퀴즈 65% 이상 vs 통째로 맡긴 사람 40% 미만).</li>
+    <li>문헌 검토: AI 요약은 출발점일 뿐. 요약과 인용은 원문과 대조해야 한다 — AI는 존재하지 않는 논문이나 쪽수를 그럴듯하게 만들 수 있다("행동 경향" 장의 환각, "에이전틱 RAG" 장의 딥리서치 인용 정확도 40~80%).</li>
+    <li>교정: 수정안을 통째로 받아들이지 말고 바뀐 곳을 보고 고른다(Claude 앱에서 "바뀐 부분만 표시해 줘", Codex 앱에서는 파일 변경 내역(diff)으로 확인).</li>
+    <li>기록: AI와 나눈 대화, 어떤 단계에 썼는지를 남겨 두면 연구윤리상 사용 공개와 지도교수 상의에 쓸 수 있다(다음 "연구윤리" 장). 기존 "작업 방식" 장의 핵심(작은 단위로 맡기기, 기준과 대조하기, 기록 남기기)을 논문 작성에 옮긴 것.</li>
+    <li>시연과 연결: 문헌 검토·구성은 Claude 앱(프로젝트에 논문 올리기), 인용 확인은 Codex 앱(원고 폴더에서 본문 인용과 참고문헌 대조)으로 보여 줄 수 있다.</li>
+  </ul></aside>
+</section>
+
+<section class="slide" aria-label="연구윤리">
+  <h1 class="t-title" data-tx>AI 사용 공개(AI disclosure)</h1>
+  <p class="def" data-tx>AI 사용 공개: 어떤 AI를 어디에 어떻게 썼는지 논문에 밝히는 일.</p>
+  <div class="side">
+    <p data-tx>전남대 글쓰기 과제 가이드(2025.9)는<br>사실 검증, 사용 사실 공개, 대화<br>기록 보관을 요구한다.</p>
+    <p data-tx>교육부·한국연구재단 가이드(2026.6)는<br>대학원생을 포함한 연구자에게<br>책임 있는 사용 준칙 10가지를 둔다.</p>
+    <p data-tx>주요 학술지는 모두 AI를 저자로<br>인정하지 않고, <mark>내용과 인용의<br>책임은 사람에게</mark> 있다고 명시한다.</p>
+    <p data-tx>학위논문은 학과·지도교수 지침과<br>투고할 학술지 규정을 먼저 확인한다.</p>
+  </div>
+  <table class="etable" data-table>
+    <tr><th data-tx>원칙</th><th data-tx>근거</th></tr>
+    <tr><td data-tx>AI는 저자가 될 수 없다</td><td data-tx>한국연구재단, COPE, ICMJE, Elsevier, Nature</td></tr>
+    <tr><td data-tx>내용·인용의 책임은 나에게</td><td data-tx>한국연구재단, ICMJE, Elsevier, 전남대</td></tr>
+    <tr><td data-tx>어디에 어떻게 썼는지 공개·기록</td><td data-tx>한국연구재단, COPE, ICMJE, 전남대</td></tr>
+    <tr><td data-tx>미공개 데이터·개인정보는 넣지 않기</td><td data-tx>한국연구재단, 전남대 정보화본부, Nature, Elsevier</td></tr>
+    <tr><td data-tx>내 학교·학술지 규정 먼저 확인</td><td data-tx>한국연구재단, 전남대(수업계획서)</td></tr>
+  </table>
+  <aside class="notes"><ul>
+    <li>전남대: 교육혁신본부 「생성형 AI를 활용한 글쓰기 과제 가이드라인」 제1판(2025.9) — 학생 준수사항 7가지(수업계획서 확인, 사실 확인, 사용 공개(도구·목적·횟수·분량), 대화 기록 보관, 개인·기밀 정보 입력 금지, AI는 저자 아님 등)와 부정행위 6유형. 수업 과제용 지침이며, 학위논문 전용 AI 규정은 학교 누리집에서 찾지 못했다(없다는 뜻은 아님 — 대학원 행정실 확인 권장). 정보화본부 「생성형 AI 활용 보안 가이드」: 개인정보·내부 문서 입력 금지, 입력 내용 학습 끄기, 2단계 로그인, 결과 확인.</li>
+    <li>국가: 한국연구재단 「대학 연구자를 위한 생성형 AI 연구윤리 가이드」(2026.6, 교육부·한국연구재단·KUCRE). 부록 10가지 준칙 — AI는 저자 아님, 책임은 연구자, 산출물 검증, 미공개·면담·개인 자료 입력 금지, 사용 공개, 기록 보관, 제출처 규정 확인 등. 5장에 공개 위치(본문 주석·각주·사사)와 "AI 활용 공개서" 서식 예시. 원문 파일은 공식 포털에서 열리지 않아 원광대 게시본으로 확인.</li>
+    <li>학술지: Nature 포트폴리오는 위험도 3단계(초록=허용, 주황=주의, 빨강=금지) — 문장 다듬기는 허용·공개 권장, AI 저자·조작된 데이터나 인용·사실적 가짜 이미지는 금지, 원고를 공개 AI 도구에 넣지 말 것. Elsevier(2026.6 갱신): 참고문헌 앞에 별도 AI 사용 진술, 기본 문법·맞춤법 점검은 공개 불요, 연구 이미지 생성·변경 금지. ICMJE: 투고 시 커버레터와 원고에 AI 사용 명시, AI 산출물을 1차 출처로 인용 불가. COPE(2023.2): AI는 저자 불가, 도구와 사용 방식을 방법 절에 공개.</li>
+    <li>기관마다 다른 점: 문법만 고친 경우 공개 여부(Elsevier 불요, Springer Nature 권장, COPE는 글쓰기에 쓴 AI 전부 공개), AI 이미지 허용 범위, AI를 참고문헌에 넣는 방식(연구재단은 대개 도구로 밝히고 인용하지 않음, ICMJE는 1차 출처 인용 불가, APA는 인용 형식 제시 — APA 2025.9 갱신은 도서관 안내로만 확인). 그래서 "먼저 확인"이 마지막 원칙.</li>
+    <li>실천(강연자 제안): Claude·Codex 앱의 대화 기록과 프로젝트를 남겨 두고, 논문 끝이나 방법 절에 "어떤 도구를, 어느 단계에, 무엇에 썼는지"를 2~3문장으로 적는다. 미발표 원고·면담 자료는 기관 계약이 없는 공개 도구에 넣지 않는다. 근거 노트: Knowledge/09_research_ethics/01_ai-use-policies.md.</li>
+  </ul></aside>
+</section>
+
+<section class="slide" aria-label="정리">
+  <h1 class="t-title" data-tx>정리</h1>
+  <p class="def" data-tx>정리: AI는 연구의 조수다. 판단과 완성은 내가 한다.</p>
+  <div class="rows5">
+    <div class="row"><span class="no" data-tx>1</span><span class="hd" data-tx>자료를 준다</span><span class="ds" data-tx>내 논문과 문헌을 줄수록 답이 정확해진다</span></div>
+    <div class="row"><span class="no" data-tx>2</span><span class="hd" data-tx>먼저 쓴다</span><span class="ds" data-tx>초안은 내가 쓰고, AI에게 비판받는다</span></div>
+    <div class="row"><span class="no" data-tx>3</span><span class="hd" data-tx>원문으로 확인한다</span><span class="ds" data-tx>인용과 사실은 반드시 원문과 대조한다</span></div>
+    <div class="row"><span class="no" data-tx>4</span><span class="hd" data-tx>기록하고 밝힌다</span><span class="ds" data-tx>AI를 어디에 썼는지 남기고, 논문에 공개한다</span></div>
+  </div>
+  <aside class="notes"><ul>
+    <li>네 가지는 각각 2파트(컨텍스트), 1·5파트(증폭·완성·단계별 활용), 4파트(행동 경향·검증), 5파트(연구윤리)에 대응. 질문 받기.</li>
+  </ul></aside>
+</section>

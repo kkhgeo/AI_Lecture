@@ -1,0 +1,680 @@
+[
+ {
+  "texts": [
+   {
+    "rect": {
+     "x": 200,
+     "y": 119.5,
+     "w": 457.515625,
+     "h": 84
+    },
+    "lh": 84,
+    "align": "left",
+    "rot": 0,
+    "lines": 1,
+    "runs": [
+     {
+      "text": "토큰과 컨텍스트",
+      "family": "Anton",
+      "weight": 800,
+      "size": 72,
+      "color": "rgb(255, 255, 255)",
+      "ls": -0.36,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 301,
+     "w": 179.28125,
+     "h": 48
+    },
+    "lh": 48,
+    "align": "left",
+    "rot": 0,
+    "lines": 1,
+    "runs": [
+     {
+      "text": "토큰 ",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     },
+     {
+      "text": "Token",
+      "family": "JetBrains Mono",
+      "weight": 500,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 353.5,
+     "w": 560,
+     "h": 128
+    },
+    "lh": 64,
+    "align": "left",
+    "rot": 0,
+    "lines": 2,
+    "runs": [
+     {
+      "text": "언어 모델이 처리하는 가장",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     },
+     {
+      "text": "\u000b",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     },
+     {
+      "text": "작은 단위",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 490,
+     "w": 560,
+     "h": 96
+    },
+    "lh": 48,
+    "align": "left",
+    "rot": 0,
+    "lines": 2,
+    "runs": [
+     {
+      "text": "단어, 단어 조각, 글자, 바이트에 해당할",
+      "family": "Paperlogy",
+      "weight": 400,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     },
+     {
+      "text": "\u000b",
+      "family": "Paperlogy",
+      "weight": 400,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     },
+     {
+      "text": "수 있다",
+      "family": "Paperlogy",
+      "weight": 400,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 634,
+     "w": 285.84375,
+     "h": 48
+    },
+    "lh": 48,
+    "align": "left",
+    "rot": 0,
+    "lines": 1,
+    "runs": [
+     {
+      "text": "컨텍스트 ",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     },
+     {
+      "text": "Context",
+      "family": "JetBrains Mono",
+      "weight": 500,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 686.5,
+     "w": 560,
+     "h": 128
+    },
+    "lh": 64,
+    "align": "left",
+    "rot": 0,
+    "lines": 2,
+    "runs": [
+     {
+      "text": "LLM이 출력을 생성할 때",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     },
+     {
+      "text": "\u000b",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     },
+     {
+      "text": "참조하는 토큰의 집합",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 823,
+     "w": 560,
+     "h": 96
+    },
+    "lh": 48,
+    "align": "left",
+    "rot": 0,
+    "lines": 2,
+    "runs": [
+     {
+      "text": "입력과 지금까지 생성한 출력을 모두",
+      "family": "Paperlogy",
+      "weight": 400,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     },
+     {
+      "text": "\u000b",
+      "family": "Paperlogy",
+      "weight": 400,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     },
+     {
+      "text": "포함한다",
+      "family": "Paperlogy",
+      "weight": 400,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     }
+    ]
+   }
+  ],
+  "imgs": [
+   {
+    "rect": {
+     "x": 800,
+     "y": 310.5,
+     "w": 920,
+     "h": 599
+    },
+    "src": "assets/fig-context-window-dark.svg"
+   }
+  ],
+  "logos": [
+   {
+    "rect": {
+     "x": 64,
+     "y": 44,
+     "w": 86,
+     "h": 40
+    }
+   }
+  ],
+  "tables": [],
+  "ui": [],
+  "icons": [],
+  "notes": "출처: 토큰 정의 Claude Docs Glossary. 컨텍스트 정의 Anthropic, \"Effective context engineering for AI agents\"(2025). \"입력과 출력 모두 포함\"은 Claude Docs \"Context windows\"에 근거. 그림은 Claude Docs \"Context windows\" 그림을 다크로 가공.\n토큰: Claude 기준 영어 약 3.5자가 1토큰, 언어마다 다르다. 사람은 글자를 보지만 모델은 토큰을 본다.\n그림 읽기: 턴마다 이전 입력과 출력이 전부 다음 입력으로 쌓인다. 이 누적 전체가 컨텍스트다.\n컨텍스트는 학습 데이터가 아니다. 대화할 때마다 새로 채워지는 입력이다.\n아래 가위 점선이 창의 한계 → 다음 슬라이드."
+ },
+ {
+  "texts": [
+   {
+    "rect": {
+     "x": 200,
+     "y": 119.5,
+     "w": 331.515625,
+     "h": 84
+    },
+    "lh": 84,
+    "align": "left",
+    "rot": 0,
+    "lines": 1,
+    "runs": [
+     {
+      "text": "컨텍스트 창",
+      "family": "Anton",
+      "weight": 800,
+      "size": 72,
+      "color": "rgb(255, 255, 255)",
+      "ls": -0.36,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 349,
+     "w": 476.65625,
+     "h": 48
+    },
+    "lh": 48,
+    "align": "left",
+    "rot": 0,
+    "lines": 1,
+    "runs": [
+     {
+      "text": "컨텍스트 창 ",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     },
+     {
+      "text": "Context window",
+      "family": "JetBrains Mono",
+      "weight": 500,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 401.5,
+     "w": 480,
+     "h": 192
+    },
+    "lh": 64,
+    "align": "left",
+    "rot": 0,
+    "lines": 3,
+    "runs": [
+     {
+      "text": "모델이 새 텍스트를",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     },
+     {
+      "text": "\u000b",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     },
+     {
+      "text": "생성할 때 참조할 수 있는",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     },
+     {
+      "text": "\u000b",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     },
+     {
+      "text": "텍스트의 양",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 602,
+     "w": 237.609375,
+     "h": 48
+    },
+    "lh": 48,
+    "align": "left",
+    "rot": 0,
+    "lines": 1,
+    "runs": [
+     {
+      "text": "모델의 작업 기억",
+      "family": "Paperlogy",
+      "weight": 400,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 698,
+     "w": 179.28125,
+     "h": 48
+    },
+    "lh": 48,
+    "align": "left",
+    "rot": 0,
+    "lines": 1,
+    "runs": [
+     {
+      "text": "한계 ",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     },
+     {
+      "text": "Limit",
+      "family": "JetBrains Mono",
+      "weight": 500,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 750.5,
+     "w": 410.296875,
+     "h": 64
+    },
+    "lh": 64,
+    "align": "left",
+    "rot": 0,
+    "lines": 1,
+    "runs": [
+     {
+      "text": "200K 또는 1M 토큰",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 200,
+     "y": 823,
+     "w": 308.171875,
+     "h": 48
+    },
+    "lh": 48,
+    "align": "left",
+    "rot": 0,
+    "lines": 1,
+    "runs": [
+     {
+      "text": "입력 + 출력의 합 기준",
+      "family": "Paperlogy",
+      "weight": 400,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 720,
+     "y": 291.5,
+     "w": 443.53125,
+     "h": 48
+    },
+    "lh": 48,
+    "align": "left",
+    "rot": 0,
+    "lines": 1,
+    "runs": [
+     {
+      "text": "컨텍스트 부패 ",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     },
+     {
+      "text": "Context rot",
+      "family": "JetBrains Mono",
+      "weight": 500,
+      "size": 36,
+      "color": "rgba(255, 255, 255, 0.5)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgba(255, 255, 255, 0.5)",
+      "mark": false
+     }
+    ]
+   },
+   {
+    "rect": {
+     "x": 720,
+     "y": 344,
+     "w": 855.375,
+     "h": 64
+    },
+    "lh": 64,
+    "align": "left",
+    "rot": 0,
+    "lines": 1,
+    "runs": [
+     {
+      "text": "토큰이 늘수록 정확도와 회상이 떨어지는 현상",
+      "family": "Paperlogy",
+      "weight": 500,
+      "size": 48,
+      "color": "rgb(255, 255, 255)",
+      "ls": 0,
+      "upper": false,
+      "strokeW": 0,
+      "strokeColor": "rgb(255, 255, 255)",
+      "mark": false
+     }
+    ]
+   }
+  ],
+  "imgs": [
+   {
+    "rect": {
+     "x": 720,
+     "y": 432.5,
+     "w": 1000,
+     "h": 496
+    },
+    "src": "assets/fig-context-rot-chroma-dark.png"
+   }
+  ],
+  "logos": [
+   {
+    "rect": {
+     "x": 64,
+     "y": 44,
+     "w": 86,
+     "h": 40
+    }
+   }
+  ],
+  "tables": [],
+  "ui": [],
+  "icons": [],
+  "notes": "출처: 창 정의 Claude Docs Glossary. 한계와 부패 정의 Claude Docs \"Context windows\". 그래프 Hong, Troynikov, Huber (2025) \"Context Rot\", Chroma (색만 다크로 치환).\n창은 학습 데이터와 다르다. 최신 모델 다수는 1M, 그 외 200K. 입력과 출력의 합이 이 한도를 넘을 수 없다. 입력만으로 넘으면 요청 오류, 생성 중 닿으면 출력이 멈춘다.\n그래프 읽기: 같은 질문에 필요한 부분만 준 입력(Focused, 구리색, 약 300 토큰)과 대화 기록 전체(Full, 회색, 약 113K 토큰). 예: Claude Opus 4는 0.92 vs 0.38. 모든 모델에서 Full이 낮다.\n핵심: 한도 안이라도 많이 채울수록 흐려진다 → 다음 장(Context engineering)."
+ }
+]

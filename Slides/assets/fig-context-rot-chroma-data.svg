@@ -1,0 +1,1666 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1080pt" height="525.6pt" viewBox="0 0 1080 525.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-29T15:41:25.634455</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 525.6 
+L 1080 525.6 
+L 1080 0 
+L 0 0 
+z
+"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 74.412777 344.309841 
+L 1069.2 344.309841 
+L 1069.2 37.92 
+L 74.412777 37.92 
+z
+"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 119.630378 344.309841 
+L 166.872648 344.309841 
+L 166.872648 86.725461 
+L 119.630378 86.725461 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #e4b592"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 254.608292 344.309841 
+L 301.850562 344.309841 
+L 301.850562 94.859705 
+L 254.608292 94.859705 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #e4b592"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 389.586205 344.309841 
+L 436.828475 344.309841 
+L 436.828475 86.725461 
+L 389.586205 86.725461 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #e4b592"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 524.564119 344.309841 
+L 571.806389 344.309841 
+L 571.806389 102.993949 
+L 524.564119 102.993949 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #e4b592"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 659.542032 344.309841 
+L 706.784302 344.309841 
+L 706.784302 108.416778 
+L 659.542032 108.416778 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #e4b592"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 794.519946 344.309841 
+L 841.762216 344.309841 
+L 841.762216 105.705363 
+L 794.519946 105.705363 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #e4b592"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 929.497859 344.309841 
+L 976.740129 344.309841 
+L 976.740129 130.108094 
+L 929.497859 130.108094 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #e4b592"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 166.872648 344.309841 
+L 214.114918 344.309841 
+L 214.114918 149.087995 
+L 166.872648 149.087995 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #7e7e7e"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 301.850562 344.309841 
+L 349.092831 344.309841 
+L 349.092831 241.276089 
+L 301.850562 241.276089 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #7e7e7e"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 436.828475 344.309841 
+L 484.070745 344.309841 
+L 484.070745 151.79941 
+L 436.828475 151.79941 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #7e7e7e"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 571.806389 344.309841 
+L 619.048658 344.309841 
+L 619.048658 241.276089 
+L 571.806389 241.276089 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #7e7e7e"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 706.784302 344.309841 
+L 754.026572 344.309841 
+L 754.026572 222.296188 
+L 706.784302 222.296188 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #7e7e7e"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 841.762216 344.309841 
+L 889.004485 344.309841 
+L 889.004485 211.450529 
+L 841.762216 211.450529 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #7e7e7e"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 976.740129 344.309841 
+L 1023.982399 344.309841 
+L 1023.982399 241.276089 
+L 976.740129 241.276089 
+z
+" clip-path="url(#p42fd183dfc)" style="fill: #7e7e7e"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m238214597f" d="M 0 0 
+L 0 3.5 
+" style="stroke: #bdb6b0; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m238214597f" x="166.872648" y="344.309841" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- Claude Opus 4 - thinking -->
+      <g style="fill: #fff3ea" transform="translate(34.511097 502.324869) rotate(-45) scale(0.16 -0.16)">
+       <defs>
+        <path id="Paperlogy-4Regular-43" d="M 2717 -50 
+Q 2020 -50 1451 281 
+Q 882 612 558 1191 
+Q 235 1771 235 2489 
+Q 235 3207 558 3786 
+Q 882 4366 1451 4697 
+Q 2020 5028 2717 5028 
+Q 3250 5028 3698 4839 
+Q 4146 4651 4466 4288 
+L 4132 3961 
+Q 3584 4551 2745 4551 
+Q 2183 4551 1728 4281 
+Q 1273 4011 1017 3541 
+Q 761 3072 761 2489 
+Q 761 1906 1017 1436 
+Q 1273 967 1728 697 
+Q 2183 427 2745 427 
+Q 3577 427 4132 1024 
+L 4466 697 
+Q 4146 334 3698 142 
+Q 3250 -50 2717 -50 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-6c" d="M 1095 5276 
+L 1095 0 
+L 590 0 
+L 590 5276 
+L 1095 5276 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-61" d="M 1849 3776 
+Q 2546 3776 2919 3406 
+Q 3293 3036 3293 2318 
+L 3293 0 
+L 2823 0 
+L 2823 654 
+Q 2660 327 2343 145 
+Q 2027 -36 1586 -36 
+Q 981 -36 636 263 
+Q 292 562 292 1045 
+Q 292 1522 622 1810 
+Q 953 2098 1664 2098 
+L 2795 2098 
+Q 2795 2325 2766 2475 
+Q 2731 2901 2485 3118 
+Q 2240 3335 1792 3335 
+Q 1451 3335 1141 3214 
+Q 832 3093 612 2887 
+L 405 3257 
+Q 676 3506 1056 3641 
+Q 1437 3776 1849 3776 
+z
+M 1678 348 
+Q 2091 348 2372 544 
+Q 2653 740 2795 1116 
+L 2795 1756 
+L 1700 1756 
+Q 1216 1756 999 1571 
+Q 782 1387 782 1074 
+Q 782 740 1020 544 
+Q 1259 348 1678 348 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-75" d="M 3762 0 
+L 3285 0 
+L 3285 747 
+Q 3108 377 2773 170 
+Q 2439 -36 1998 -36 
+Q 1309 -36 910 373 
+Q 512 782 512 1572 
+L 512 3733 
+L 1010 3733 
+L 1010 1636 
+Q 1010 1038 1287 732 
+Q 1565 427 2077 427 
+Q 2624 427 2944 789 
+Q 3264 1152 3264 1778 
+L 3264 3733 
+L 3762 3733 
+L 3762 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-64" d="M 3854 0 
+L 3378 0 
+L 3378 818 
+Q 3172 412 2812 188 
+Q 2453 -36 1991 -36 
+Q 1493 -36 1095 206 
+Q 697 448 466 882 
+Q 235 1316 235 1870 
+Q 235 2425 466 2858 
+Q 697 3292 1095 3534 
+Q 1493 3776 1991 3776 
+Q 2439 3776 2798 3555 
+Q 3157 3335 3357 2944 
+L 3357 5276 
+L 3854 5276 
+L 3854 0 
+z
+M 2055 412 
+Q 2425 412 2723 593 
+Q 3022 775 3193 1109 
+Q 3364 1444 3364 1870 
+Q 3364 2297 3193 2627 
+Q 3022 2958 2723 3139 
+Q 2425 3321 2055 3321 
+Q 1685 3321 1386 3139 
+Q 1088 2958 917 2627 
+Q 747 2297 747 1870 
+Q 747 1444 917 1109 
+Q 1088 775 1386 593 
+Q 1685 412 2055 412 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-65" d="M 3698 1742 
+L 733 1742 
+Q 754 1351 935 1045 
+Q 1117 740 1426 572 
+Q 1735 405 2119 405 
+Q 2453 405 2730 526 
+Q 3008 647 3200 896 
+L 3485 576 
+Q 3243 277 2887 120 
+Q 2532 -36 2112 -36 
+Q 1565 -36 1138 209 
+Q 711 455 473 889 
+Q 235 1323 235 1870 
+Q 235 2418 462 2851 
+Q 690 3285 1088 3530 
+Q 1486 3776 1977 3776 
+Q 2468 3776 2862 3538 
+Q 3257 3300 3481 2869 
+Q 3705 2439 3705 1884 
+L 3698 1742 
+z
+M 1984 3349 
+Q 1465 3349 1120 2997 
+Q 775 2645 733 2084 
+L 3236 2084 
+Q 3186 2638 2841 2993 
+Q 2496 3349 1984 3349 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-20" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-4f" d="M 2724 -50 
+Q 2020 -50 1451 281 
+Q 882 612 558 1191 
+Q 235 1771 235 2489 
+Q 235 3207 558 3786 
+Q 882 4366 1451 4697 
+Q 2020 5028 2724 5028 
+Q 3428 5028 4000 4697 
+Q 4573 4366 4896 3786 
+Q 5220 3207 5220 2489 
+Q 5220 1771 4896 1191 
+Q 4573 612 4000 281 
+Q 3428 -50 2724 -50 
+z
+M 2724 427 
+Q 3285 427 3737 693 
+Q 4189 960 4445 1429 
+Q 4701 1899 4701 2489 
+Q 4701 3079 4445 3548 
+Q 4189 4018 3737 4284 
+Q 3285 4551 2724 4551 
+Q 2169 4551 1721 4284 
+Q 1273 4018 1017 3548 
+Q 761 3079 761 2489 
+Q 761 1899 1017 1429 
+Q 1273 960 1721 693 
+Q 2169 427 2724 427 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-70" d="M 2461 3776 
+Q 2951 3776 3349 3534 
+Q 3748 3292 3979 2855 
+Q 4210 2418 4210 1863 
+Q 4210 1308 3979 874 
+Q 3748 441 3349 202 
+Q 2951 -36 2461 -36 
+Q 2013 -36 1653 184 
+Q 1294 405 1095 796 
+L 1095 -1380 
+L 590 -1380 
+L 590 3733 
+L 1074 3733 
+L 1074 2916 
+Q 1273 3321 1635 3548 
+Q 1998 3776 2461 3776 
+z
+M 2397 412 
+Q 2766 412 3065 593 
+Q 3364 775 3534 1105 
+Q 3705 1436 3705 1863 
+Q 3705 2290 3534 2624 
+Q 3364 2958 3065 3139 
+Q 2766 3321 2397 3321 
+Q 2027 3321 1728 3139 
+Q 1429 2958 1258 2624 
+Q 1088 2290 1088 1863 
+Q 1088 1436 1258 1105 
+Q 1429 775 1728 593 
+Q 2027 412 2397 412 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-73" d="M 1557 -36 
+Q 1131 -36 732 96 
+Q 334 228 114 434 
+L 306 818 
+Q 533 633 874 508 
+Q 1216 384 1579 384 
+Q 2077 384 2308 551 
+Q 2539 718 2539 1010 
+Q 2539 1216 2411 1337 
+Q 2283 1458 2091 1518 
+Q 1899 1579 1557 1643 
+Q 1131 1721 864 1813 
+Q 597 1906 412 2119 
+Q 228 2332 228 2709 
+Q 228 3172 597 3474 
+Q 967 3776 1643 3776 
+Q 1984 3776 2329 3676 
+Q 2674 3577 2894 3413 
+L 2702 3022 
+Q 2475 3186 2201 3267 
+Q 1927 3349 1643 3349 
+Q 1181 3349 949 3178 
+Q 718 3008 718 2724 
+Q 718 2510 849 2382 
+Q 981 2254 1184 2190 
+Q 1387 2126 1721 2062 
+Q 2141 1984 2400 1891 
+Q 2660 1799 2841 1593 
+Q 3022 1387 3022 1024 
+Q 3022 540 2641 252 
+Q 2261 -36 1557 -36 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-34" d="M 3399 1308 
+L 3399 0 
+L 2866 0 
+L 2866 1308 
+L 71 1308 
+L 71 1678 
+L 2688 4978 
+L 3271 4978 
+L 740 1764 
+L 2880 1764 
+L 2880 2916 
+L 3399 2916 
+L 3399 1764 
+L 4388 1764 
+L 4388 1308 
+L 3399 1308 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-2d" d="M 2297 2709 
+L 2297 2268 
+L 427 2268 
+L 427 2709 
+L 2297 2709 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-74" d="M 2475 220 
+Q 2340 92 2140 28 
+Q 1941 -36 1721 -36 
+Q 1223 -36 949 252 
+Q 676 540 676 1052 
+L 676 3285 
+L 50 3285 
+L 50 3705 
+L 676 3705 
+L 676 4558 
+L 1173 4558 
+L 1173 3705 
+L 2247 3705 
+L 2247 3285 
+L 1173 3285 
+L 1173 1081 
+Q 1173 747 1329 572 
+Q 1486 398 1785 398 
+Q 2091 398 2304 590 
+L 2475 220 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-68" d="M 2432 3776 
+Q 3093 3776 3484 3367 
+Q 3876 2958 3876 2176 
+L 3876 0 
+L 3371 0 
+L 3371 2112 
+Q 3371 2695 3097 3001 
+Q 2823 3307 2318 3307 
+Q 1757 3307 1426 2947 
+Q 1095 2588 1095 1956 
+L 1095 0 
+L 590 0 
+L 590 5276 
+L 1095 5276 
+L 1095 3015 
+Q 1280 3371 1625 3573 
+Q 1970 3776 2432 3776 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-69" d="M 839 4558 
+Q 683 4558 576 4661 
+Q 469 4764 469 4914 
+Q 469 5070 576 5173 
+Q 683 5276 839 5276 
+Q 996 5276 1102 5173 
+Q 1209 5070 1209 4928 
+Q 1209 4772 1102 4665 
+Q 996 4558 839 4558 
+z
+M 1095 3733 
+L 1095 0 
+L 590 0 
+L 590 3733 
+L 1095 3733 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-6e" d="M 2361 3776 
+Q 3022 3776 3413 3367 
+Q 3805 2958 3805 2176 
+L 3805 0 
+L 3300 0 
+L 3300 2112 
+Q 3300 2695 3026 3001 
+Q 2752 3307 2247 3307 
+Q 1685 3307 1354 2947 
+Q 1024 2588 1024 1956 
+L 1024 0 
+L 519 0 
+L 519 3733 
+L 1003 3733 
+L 1003 2987 
+Q 1188 3356 1540 3566 
+Q 1892 3776 2361 3776 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-6b" d="M 1095 1074 
+L 1095 0 
+L 590 0 
+L 590 5276 
+L 1095 5276 
+L 1095 1700 
+L 3186 3733 
+L 3805 3733 
+L 2290 2212 
+L 3954 0 
+L 3342 0 
+L 1913 1877 
+L 1095 1074 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-67" d="M 3904 448 
+Q 3904 -498 3456 -956 
+Q 3008 -1415 2119 -1415 
+Q 1614 -1415 1180 -1265 
+Q 747 -1116 477 -839 
+L 697 -455 
+Q 953 -704 1315 -839 
+Q 1678 -974 2084 -974 
+Q 2759 -974 3079 -643 
+Q 3399 -313 3399 384 
+L 3399 960 
+Q 3193 576 2827 362 
+Q 2461 149 1998 149 
+Q 1501 149 1099 380 
+Q 697 612 466 1024 
+Q 235 1436 235 1963 
+Q 235 2489 466 2901 
+Q 697 3314 1099 3545 
+Q 1501 3776 1998 3776 
+Q 2475 3776 2844 3552 
+Q 3214 3328 3421 2930 
+L 3421 3733 
+L 3904 3733 
+L 3904 448 
+z
+M 2077 590 
+Q 2461 590 2763 764 
+Q 3065 939 3235 1251 
+Q 3406 1564 3406 1963 
+Q 3406 2361 3235 2670 
+Q 3065 2980 2763 3150 
+Q 2461 3321 2077 3321 
+Q 1693 3321 1387 3150 
+Q 1081 2980 910 2670 
+Q 740 2361 740 1963 
+Q 740 1564 910 1251 
+Q 1081 939 1387 764 
+Q 1693 590 2077 590 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Paperlogy-4Regular-43"/>
+       <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(72.555542 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-61" transform="translate(98.88887 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-75" transform="translate(156.749969 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-64" transform="translate(223.638855 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-65" transform="translate(293.083282 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(354.638824 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-4f" transform="translate(376.638809 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-70" transform="translate(461.861023 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-75" transform="translate(531.30545 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-73" transform="translate(598.194336 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(647.749878 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-34" transform="translate(669.749863 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(736.416519 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-2d" transform="translate(758.416504 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(800.972046 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-74" transform="translate(822.972031 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-68" transform="translate(863.638687 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-69" transform="translate(932.860901 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(959.194229 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6b" transform="translate(1026.638657 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-69" transform="translate(1088.305313 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(1114.638641 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-67" transform="translate(1182.083069 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m238214597f" x="301.850562" y="344.309841" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- Claude Opus 4 -->
+      <g style="fill: #fff3ea" transform="translate(227.85714 443.956739) rotate(-45) scale(0.16 -0.16)">
+       <use xlink:href="#Paperlogy-4Regular-43"/>
+       <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(72.555542 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-61" transform="translate(98.88887 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-75" transform="translate(156.749969 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-64" transform="translate(223.638855 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-65" transform="translate(293.083282 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(354.638824 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-4f" transform="translate(376.638809 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-70" transform="translate(461.861023 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-75" transform="translate(531.30545 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-73" transform="translate(598.194336 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(647.749878 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-34" transform="translate(669.749863 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m238214597f" x="436.828475" y="344.309841" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- Claude Sonnet 4 - thinking -->
+      <g style="fill: #fff3ea" transform="translate(294.093668 512.698125) rotate(-45) scale(0.16 -0.16)">
+       <defs>
+        <path id="Paperlogy-4Regular-53" d="M 1970 -50 
+Q 1444 -50 964 131 
+Q 484 313 206 604 
+L 405 1010 
+Q 669 740 1092 572 
+Q 1515 405 1970 405 
+Q 2596 405 2912 650 
+Q 3229 896 3229 1280 
+Q 3229 1579 3058 1760 
+Q 2887 1941 2631 2037 
+Q 2375 2133 1934 2247 
+Q 1408 2389 1091 2520 
+Q 775 2652 551 2922 
+Q 327 3193 327 3655 
+Q 327 4032 519 4345 
+Q 711 4658 1098 4843 
+Q 1486 5028 2062 5028 
+Q 2475 5028 2866 4907 
+Q 3257 4786 3549 4572 
+L 3371 4153 
+Q 3079 4359 2738 4465 
+Q 2397 4572 2069 4572 
+Q 1458 4572 1148 4320 
+Q 839 4068 839 3676 
+Q 839 3378 1010 3193 
+Q 1181 3008 1440 2912 
+Q 1700 2816 2141 2702 
+Q 2660 2567 2976 2435 
+Q 3293 2304 3517 2034 
+Q 3741 1764 3741 1316 
+Q 3741 939 3545 629 
+Q 3349 320 2951 135 
+Q 2553 -50 1970 -50 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-6f" d="M 2055 -36 
+Q 1536 -36 1120 209 
+Q 704 455 469 889 
+Q 235 1323 235 1870 
+Q 235 2418 469 2851 
+Q 704 3285 1120 3530 
+Q 1536 3776 2055 3776 
+Q 2567 3776 2979 3530 
+Q 3392 3285 3626 2851 
+Q 3861 2418 3861 1870 
+Q 3861 1323 3626 889 
+Q 3392 455 2979 209 
+Q 2567 -36 2055 -36 
+z
+M 2055 412 
+Q 2425 412 2723 593 
+Q 3022 775 3193 1109 
+Q 3364 1444 3364 1870 
+Q 3364 2297 3193 2627 
+Q 3022 2958 2723 3139 
+Q 2425 3321 2055 3321 
+Q 1678 3321 1379 3139 
+Q 1081 2958 910 2627 
+Q 740 2297 740 1870 
+Q 740 1444 910 1109 
+Q 1081 775 1379 593 
+Q 1678 412 2055 412 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Paperlogy-4Regular-43"/>
+       <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(72.555542 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-61" transform="translate(98.88887 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-75" transform="translate(156.749969 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-64" transform="translate(223.638855 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-65" transform="translate(293.083282 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(354.638824 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-53" transform="translate(376.638809 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6f" transform="translate(438.305466 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(502.30545 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(569.749878 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-65" transform="translate(637.194305 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-74" transform="translate(698.749847 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(739.416504 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-34" transform="translate(761.416489 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(828.083145 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-2d" transform="translate(850.08313 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(892.638672 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-74" transform="translate(914.638657 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-68" transform="translate(955.305313 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-69" transform="translate(1024.527527 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(1050.860855 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6b" transform="translate(1118.305283 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-69" transform="translate(1179.971939 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(1206.305267 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-67" transform="translate(1273.749695 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m238214597f" x="571.806389" y="344.309841" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- Claude Sonnet 4 -->
+      <g style="fill: #fff3ea" transform="translate(487.439711 454.329996) rotate(-45) scale(0.16 -0.16)">
+       <use xlink:href="#Paperlogy-4Regular-43"/>
+       <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(72.555542 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-61" transform="translate(98.88887 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-75" transform="translate(156.749969 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-64" transform="translate(223.638855 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-65" transform="translate(293.083282 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(354.638824 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-53" transform="translate(376.638809 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6f" transform="translate(438.305466 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(502.30545 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(569.749878 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-65" transform="translate(637.194305 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-74" transform="translate(698.749847 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(739.416504 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-34" transform="translate(761.416489 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m238214597f" x="706.784302" y="344.309841" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- Claude Sonnet 3.7 -->
+      <g style="fill: #fff3ea" transform="translate(612.184021 464.563599) rotate(-45) scale(0.16 -0.16)">
+       <defs>
+        <path id="Paperlogy-4Regular-33" d="M 2183 2837 
+Q 2965 2802 3377 2421 
+Q 3790 2041 3790 1429 
+Q 3790 1003 3584 668 
+Q 3378 334 2972 142 
+Q 2567 -50 1984 -50 
+Q 1444 -50 964 124 
+Q 484 299 199 590 
+L 434 996 
+Q 683 740 1092 580 
+Q 1501 420 1970 420 
+Q 2589 420 2919 690 
+Q 3250 960 3250 1429 
+Q 3250 1899 2919 2162 
+Q 2589 2425 1913 2425 
+L 1557 2425 
+L 1557 2788 
+L 2930 4523 
+L 391 4523 
+L 391 4978 
+L 3591 4978 
+L 3591 4615 
+L 2183 2837 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-2e" d="M 761 -36 
+Q 597 -36 487 74 
+Q 377 185 377 356 
+Q 377 519 487 629 
+Q 597 740 761 740 
+Q 925 740 1035 629 
+Q 1145 519 1145 356 
+Q 1145 185 1035 74 
+Q 925 -36 761 -36 
+z
+" transform="scale(0.015625)"/>
+        <path id="Paperlogy-4Regular-37" d="M 3933 4615 
+L 1856 0 
+L 1266 0 
+L 3307 4516 
+L 761 4516 
+L 761 3591 
+L 263 3591 
+L 263 4978 
+L 3933 4978 
+L 3933 4615 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Paperlogy-4Regular-43"/>
+       <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(72.555542 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-61" transform="translate(98.88887 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-75" transform="translate(156.749969 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-64" transform="translate(223.638855 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-65" transform="translate(293.083282 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(354.638824 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-53" transform="translate(376.638809 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6f" transform="translate(438.305466 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(502.30545 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(569.749878 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-65" transform="translate(637.194305 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-74" transform="translate(698.749847 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(739.416504 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-33" transform="translate(761.416489 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(828.083145 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-37" transform="translate(851.860916 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m238214597f" x="841.762216" y="344.309841" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- Claude Sonnet 3.5 -->
+      <g style="fill: #fff3ea" transform="translate(747.161935 464.563599) rotate(-45) scale(0.16 -0.16)">
+       <defs>
+        <path id="Paperlogy-4Regular-35" d="M 1813 2937 
+Q 3883 2937 3883 1458 
+Q 3883 1031 3680 689 
+Q 3477 348 3068 149 
+Q 2660 -50 2062 -50 
+Q 1529 -50 1045 124 
+Q 562 299 285 590 
+L 526 996 
+Q 768 740 1177 580 
+Q 1586 420 2055 420 
+Q 2667 420 2997 700 
+Q 3328 981 3328 1451 
+Q 3328 1963 2958 2222 
+Q 2589 2482 1693 2482 
+L 626 2482 
+L 882 4978 
+L 3605 4978 
+L 3605 4523 
+L 1337 4523 
+L 1166 2937 
+L 1813 2937 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Paperlogy-4Regular-43"/>
+       <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(72.555542 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-61" transform="translate(98.88887 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-75" transform="translate(156.749969 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-64" transform="translate(223.638855 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-65" transform="translate(293.083282 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(354.638824 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-53" transform="translate(376.638809 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6f" transform="translate(438.305466 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(502.30545 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(569.749878 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-65" transform="translate(637.194305 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-74" transform="translate(698.749847 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(739.416504 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-33" transform="translate(761.416489 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(828.083145 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-35" transform="translate(851.860916 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m238214597f" x="976.740129" y="344.309841" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- Claude Haiku 3.5 -->
+      <g style="fill: #fff3ea" transform="translate(889.811957 456.89149) rotate(-45) scale(0.16 -0.16)">
+       <defs>
+        <path id="Paperlogy-4Regular-48" d="M 4544 0 
+L 4018 0 
+L 4018 2290 
+L 1095 2290 
+L 1095 0 
+L 576 0 
+L 576 4978 
+L 1095 4978 
+L 1095 2766 
+L 4018 2766 
+L 4018 4978 
+L 4544 4978 
+L 4544 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Paperlogy-4Regular-43"/>
+       <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(72.555542 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-61" transform="translate(98.88887 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-75" transform="translate(156.749969 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-64" transform="translate(223.638855 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-65" transform="translate(293.083282 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(354.638824 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-48" transform="translate(376.638809 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-61" transform="translate(456.638794 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-69" transform="translate(516.749893 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-6b" transform="translate(543.083221 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-75" transform="translate(604.749878 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-20" transform="translate(671.638763 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-33" transform="translate(693.638748 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(760.305405 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-35" transform="translate(784.083176 0)"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_8">
+      <defs>
+       <path id="m6fefa33197" d="M 0 0 
+L -3.5 0 
+" style="stroke: #bdb6b0; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m6fefa33197" x="74.412777" y="344.309841" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- 0.0 -->
+      <g style="fill: #fff3ea" transform="translate(42.272777 350.904841) scale(0.16 -0.16)">
+       <defs>
+        <path id="Paperlogy-4Regular-30" d="M 2133 -50 
+Q 1557 -50 1102 259 
+Q 647 569 394 1145 
+Q 142 1721 142 2489 
+Q 142 3257 394 3833 
+Q 647 4409 1102 4718 
+Q 1557 5028 2133 5028 
+Q 2717 5028 3168 4718 
+Q 3620 4409 3872 3836 
+Q 4125 3264 4125 2489 
+Q 4125 1714 3872 1141 
+Q 3620 569 3168 259 
+Q 2717 -50 2133 -50 
+z
+M 2133 427 
+Q 2567 427 2894 668 
+Q 3221 910 3402 1372 
+Q 3584 1835 3584 2489 
+Q 3584 3143 3402 3605 
+Q 3221 4068 2894 4309 
+Q 2567 4551 2133 4551 
+Q 1707 4551 1380 4309 
+Q 1053 4068 871 3605 
+Q 690 3143 690 2489 
+Q 690 1835 871 1372 
+Q 1053 910 1380 668 
+Q 1707 427 2133 427 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Paperlogy-4Regular-30"/>
+       <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-30" transform="translate(90.444427 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m6fefa33197" x="74.412777" y="290.081551" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- 0.2 -->
+      <g style="fill: #fff3ea" transform="translate(42.272777 296.676551) scale(0.16 -0.16)">
+       <defs>
+        <path id="Paperlogy-4Regular-32" d="M 3890 0 
+L 391 0 
+L 391 363 
+L 2453 2396 
+Q 2845 2780 2980 3057 
+Q 3115 3335 3115 3627 
+Q 3115 4060 2816 4309 
+Q 2517 4558 1963 4558 
+Q 1088 4558 626 3989 
+L 235 4274 
+Q 519 4636 970 4832 
+Q 1422 5028 2005 5028 
+Q 2759 5028 3210 4661 
+Q 3662 4295 3662 3669 
+Q 3662 3285 3488 2933 
+Q 3314 2581 2845 2126 
+L 1173 462 
+L 3890 462 
+L 3890 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Paperlogy-4Regular-30"/>
+       <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-32" transform="translate(90.444427 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m6fefa33197" x="74.412777" y="235.85326" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <!-- 0.4 -->
+      <g style="fill: #fff3ea" transform="translate(42.492777 242.44826) scale(0.16 -0.16)">
+       <use xlink:href="#Paperlogy-4Regular-30"/>
+       <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-34" transform="translate(89.069427 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m6fefa33197" x="74.412777" y="181.62497" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <!-- 0.6 -->
+      <g style="fill: #fff3ea" transform="translate(42.272777 188.21997) scale(0.16 -0.16)">
+       <defs>
+        <path id="Paperlogy-4Regular-36" d="M 2375 2980 
+Q 2866 2980 3246 2795 
+Q 3627 2610 3836 2275 
+Q 4046 1941 4046 1493 
+Q 4046 1031 3825 682 
+Q 3605 334 3217 142 
+Q 2830 -50 2347 -50 
+Q 1358 -50 825 604 
+Q 292 1259 292 2446 
+Q 292 3278 576 3857 
+Q 861 4437 1376 4732 
+Q 1892 5028 2574 5028 
+Q 3314 5028 3762 4743 
+L 3549 4338 
+Q 3193 4565 2589 4565 
+Q 1813 4565 1354 4088 
+Q 896 3612 853 2702 
+Q 839 2396 889 2062 
+Q 1038 2496 1440 2738 
+Q 1842 2980 2375 2980 
+z
+M 2318 384 
+Q 2852 384 3186 679 
+Q 3520 974 3520 1465 
+Q 3520 1963 3186 2258 
+Q 2852 2553 2283 2553 
+Q 1920 2553 1632 2410 
+Q 1344 2268 1184 2016 
+Q 1024 1764 1024 1458 
+Q 1024 1173 1173 928 
+Q 1323 683 1618 533 
+Q 1913 384 2318 384 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Paperlogy-4Regular-30"/>
+       <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-36" transform="translate(90.444427 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m6fefa33197" x="74.412777" y="127.396679" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <!-- 0.8 -->
+      <g style="fill: #fff3ea" transform="translate(42.272777 133.991679) scale(0.16 -0.16)">
+       <defs>
+        <path id="Paperlogy-4Regular-38" d="M 3029 2610 
+Q 3527 2468 3797 2148 
+Q 4068 1828 4068 1380 
+Q 4068 718 3548 334 
+Q 3029 -50 2133 -50 
+Q 1230 -50 714 334 
+Q 199 718 199 1380 
+Q 199 1835 469 2151 
+Q 740 2468 1237 2610 
+Q 825 2745 601 3026 
+Q 377 3307 377 3705 
+Q 377 4316 857 4672 
+Q 1337 5028 2133 5028 
+Q 2930 5028 3410 4672 
+Q 3890 4316 3890 3705 
+Q 3890 3307 3666 3026 
+Q 3442 2745 3029 2610 
+z
+M 2133 4601 
+Q 1572 4601 1248 4355 
+Q 925 4110 925 3691 
+Q 925 3278 1245 3036 
+Q 1565 2795 2133 2795 
+Q 2702 2795 3029 3036 
+Q 3357 3278 3357 3691 
+Q 3357 4110 3022 4355 
+Q 2688 4601 2133 4601 
+z
+M 2133 377 
+Q 2781 377 3154 647 
+Q 3527 917 3527 1387 
+Q 3527 1856 3154 2126 
+Q 2781 2396 2133 2396 
+Q 1479 2396 1116 2126 
+Q 754 1856 754 1387 
+Q 754 917 1116 647 
+Q 1479 377 2133 377 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Paperlogy-4Regular-30"/>
+       <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-38" transform="translate(90.444427 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m6fefa33197" x="74.412777" y="73.168389" style="fill: #bdb6b0; stroke: #bdb6b0; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <!-- 1.0 -->
+      <g style="fill: #fff3ea" transform="translate(42.272777 79.763389) scale(0.16 -0.16)">
+       <defs>
+        <path id="Paperlogy-4Regular-31" d="M 2617 0 
+L 2077 0 
+L 2077 4523 
+L 910 4523 
+L 910 4978 
+L 2617 4978 
+L 2617 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Paperlogy-4Regular-31"/>
+       <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+       <use xlink:href="#Paperlogy-4Regular-30" transform="translate(90.444427 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_14">
+     <!-- Average Score -->
+     <g style="fill: #fff3ea" transform="translate(34.514183 252.559296) rotate(-90) scale(0.17 -0.17)">
+      <defs>
+       <path id="Paperlogy-4Regular-41" d="M 1010 1330 
+L 448 0 
+L -93 0 
+L 2062 4978 
+L 2574 4978 
+L 4743 0 
+L 4189 0 
+L 3627 1330 
+L 1010 1330 
+z
+M 2325 4416 
+L 1181 1756 
+L 3456 1756 
+L 2325 4416 
+z
+" transform="scale(0.015625)"/>
+       <path id="Paperlogy-4Regular-76" d="M 2020 0 
+L 1508 0 
+L -64 3733 
+L 455 3733 
+L 1778 583 
+L 3101 3733 
+L 3598 3733 
+L 2020 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="Paperlogy-4Regular-72" d="M 1074 2972 
+Q 1237 3356 1575 3566 
+Q 1913 3776 2397 3776 
+L 2397 3278 
+L 2276 3278 
+Q 1721 3278 1408 2922 
+Q 1095 2567 1095 1913 
+L 1095 0 
+L 590 0 
+L 590 3733 
+L 1074 3733 
+L 1074 2972 
+z
+" transform="scale(0.015625)"/>
+       <path id="Paperlogy-4Regular-63" d="M 2077 -36 
+Q 1550 -36 1130 206 
+Q 711 448 473 885 
+Q 235 1323 235 1870 
+Q 235 2418 473 2855 
+Q 711 3292 1130 3534 
+Q 1550 3776 2077 3776 
+Q 2532 3776 2898 3584 
+Q 3264 3392 3477 3029 
+L 3093 2773 
+Q 2916 3051 2652 3186 
+Q 2389 3321 2069 3321 
+Q 1693 3321 1390 3139 
+Q 1088 2958 914 2627 
+Q 740 2297 740 1870 
+Q 740 1436 914 1105 
+Q 1088 775 1390 593 
+Q 1693 412 2069 412 
+Q 2389 412 2652 547 
+Q 2916 683 3093 960 
+L 3477 711 
+Q 3264 348 2898 156 
+Q 2532 -36 2077 -36 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#Paperlogy-4Regular-41"/>
+      <use xlink:href="#Paperlogy-4Regular-76" transform="translate(69.555542 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-65" transform="translate(124.777756 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-72" transform="translate(186.333298 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-61" transform="translate(226.555511 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-67" transform="translate(286.666611 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-65" transform="translate(354.638824 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-20" transform="translate(416.194366 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-53" transform="translate(438.194351 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-63" transform="translate(499.861008 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-6f" transform="translate(557.083221 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-72" transform="translate(621.083206 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-65" transform="translate(661.30542 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="patch_17">
+    <path d="M 74.412777 344.309841 
+L 74.412777 37.92 
+" style="fill: none; stroke: #bdb6b0; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 1069.2 344.309841 
+L 1069.2 37.92 
+" style="fill: none; stroke: #bdb6b0; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 74.412777 344.309841 
+L 1069.2 344.309841 
+" style="fill: none; stroke: #bdb6b0; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 74.412777 37.92 
+L 1069.2 37.92 
+" style="fill: none; stroke: #bdb6b0; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_15">
+    <!-- 0.95 -->
+    <g style="fill: #fff3ea" transform="translate(126.466747 79.423965) scale(0.15 -0.15)">
+     <defs>
+      <path id="Paperlogy-4Regular-39" d="M 1927 5028 
+Q 2916 5028 3445 4373 
+Q 3975 3719 3975 2532 
+Q 3975 1700 3690 1120 
+Q 3406 540 2894 245 
+Q 2382 -50 1693 -50 
+Q 953 -50 505 235 
+L 718 640 
+Q 1074 412 1685 412 
+Q 2453 412 2912 885 
+Q 3371 1358 3406 2261 
+Q 3413 2332 3413 2489 
+Q 3413 2724 3385 2923 
+Q 3236 2489 2830 2243 
+Q 2425 1998 1892 1998 
+Q 1401 1998 1020 2183 
+Q 640 2368 430 2702 
+Q 221 3036 221 3484 
+Q 221 3947 441 4295 
+Q 661 4644 1052 4836 
+Q 1444 5028 1927 5028 
+z
+M 1991 2425 
+Q 2354 2425 2642 2567 
+Q 2930 2709 3090 2961 
+Q 3250 3214 3250 3520 
+Q 3250 3804 3097 4049 
+Q 2944 4295 2652 4444 
+Q 2361 4594 1949 4594 
+Q 1415 4594 1084 4299 
+Q 754 4004 754 3513 
+Q 754 3015 1084 2720 
+Q 1415 2425 1991 2425 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-39" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-35" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_16">
+    <!-- 0.92 -->
+    <g style="fill: #fff3ea" transform="translate(261.444661 87.558208) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-39" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-32" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_17">
+    <!-- 0.95 -->
+    <g style="fill: #fff3ea" transform="translate(396.422575 79.423965) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-39" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-35" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_18">
+    <!-- 0.89 -->
+    <g style="fill: #fff3ea" transform="translate(531.400488 95.692452) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-38" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-39" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_19">
+    <!-- 0.87 -->
+    <g style="fill: #fff3ea" transform="translate(666.378402 101.115281) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-38" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-37" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_20">
+    <!-- 0.88 -->
+    <g style="fill: #fff3ea" transform="translate(801.356315 98.403866) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-38" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-38" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_21">
+    <!-- 0.79 -->
+    <g style="fill: #fff3ea" transform="translate(936.334229 122.806597) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-37" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-39" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_22">
+    <!-- 0.72 -->
+    <g style="fill: #fff3ea" transform="translate(173.709017 141.786499) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-37" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-32" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_23">
+    <!-- 0.38 -->
+    <g style="fill: #fff3ea" transform="translate(308.686931 233.974592) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-33" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-38" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_24">
+    <!-- 0.71 -->
+    <g style="fill: #fff3ea" transform="translate(443.664844 144.497913) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-37" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-31" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_25">
+    <!-- 0.38 -->
+    <g style="fill: #fff3ea" transform="translate(578.642758 233.974592) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-33" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-38" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_26">
+    <!-- 0.45 -->
+    <g style="fill: #fff3ea" transform="translate(713.723796 214.994691) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-34" transform="translate(89.069427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-35" transform="translate(155.736084 0)"/>
+    </g>
+   </g>
+   <g id="text_27">
+    <!-- 0.49 -->
+    <g style="fill: #fff3ea" transform="translate(848.70171 204.149033) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-34" transform="translate(89.069427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-39" transform="translate(155.736084 0)"/>
+    </g>
+   </g>
+   <g id="text_28">
+    <!-- 0.38 -->
+    <g style="fill: #fff3ea" transform="translate(983.576498 233.974592) scale(0.15 -0.15)">
+     <use xlink:href="#Paperlogy-4Regular-30"/>
+     <use xlink:href="#Paperlogy-4Regular-2e" transform="translate(66.666656 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-33" transform="translate(90.444427 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-38" transform="translate(157.111084 0)"/>
+    </g>
+   </g>
+   <g id="text_29">
+    <!-- LongMemEval Overall Performance - Claude -->
+    <g style="fill: #fff3ea" transform="translate(371.355295 25.92) scale(0.18 -0.18)">
+     <defs>
+      <path id="Paperlogy-4Regular-4c" d="M 1173 4978 
+L 1173 462 
+L 3812 462 
+L 3812 0 
+L 661 0 
+L 661 4978 
+L 1173 4978 
+z
+" transform="scale(0.015625)"/>
+      <path id="Paperlogy-4Regular-4d" d="M 5085 3989 
+L 3243 633 
+L 3001 633 
+L 1145 3954 
+L 1145 0 
+L 661 0 
+L 661 4978 
+L 1081 4978 
+L 3122 1294 
+L 5149 4978 
+L 5582 4978 
+L 5589 0 
+L 5092 0 
+L 5085 3989 
+z
+" transform="scale(0.015625)"/>
+      <path id="Paperlogy-4Regular-6d" d="M 4978 3776 
+Q 5632 3776 6012 3367 
+Q 6393 2958 6393 2176 
+L 6393 0 
+L 5895 0 
+L 5895 2112 
+Q 5895 2695 5632 3001 
+Q 5369 3307 4885 3307 
+Q 4345 3307 4025 2947 
+Q 3705 2588 3705 1970 
+L 3705 0 
+L 3207 0 
+L 3207 2112 
+Q 3207 2695 2944 3001 
+Q 2681 3307 2205 3307 
+Q 1657 3307 1340 2947 
+Q 1024 2588 1024 1970 
+L 1024 0 
+L 519 0 
+L 519 3733 
+L 1003 3733 
+L 1003 2994 
+Q 1173 3364 1514 3570 
+Q 1856 3776 2311 3776 
+Q 2781 3776 3111 3552 
+Q 3442 3328 3584 2894 
+Q 3755 3300 4121 3538 
+Q 4487 3776 4978 3776 
+z
+" transform="scale(0.015625)"/>
+      <path id="Paperlogy-4Regular-45" d="M 3883 0 
+L 533 0 
+L 533 4978 
+L 3790 4978 
+L 3790 4523 
+L 1045 4523 
+L 1045 2752 
+L 3492 2752 
+L 3492 2304 
+L 1045 2304 
+L 1045 455 
+L 3883 455 
+L 3883 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="Paperlogy-4Regular-50" d="M 2304 4978 
+Q 3214 4978 3729 4526 
+Q 4245 4075 4245 3278 
+Q 4245 2482 3729 2027 
+Q 3214 1572 2304 1572 
+L 1045 1572 
+L 1045 0 
+L 533 0 
+L 533 4978 
+L 2304 4978 
+z
+M 2290 2034 
+Q 2994 2034 3360 2357 
+Q 3726 2681 3726 3278 
+Q 3726 3876 3356 4196 
+Q 2987 4516 2290 4516 
+L 1045 4516 
+L 1045 2034 
+L 2290 2034 
+z
+" transform="scale(0.015625)"/>
+      <path id="Paperlogy-4Regular-66" d="M 1785 4878 
+Q 1166 4878 1166 4181 
+L 1166 3705 
+L 2247 3705 
+L 2247 3285 
+L 1173 3285 
+L 1173 0 
+L 676 0 
+L 676 3285 
+L 50 3285 
+L 50 3705 
+L 676 3705 
+L 676 4203 
+Q 676 4715 956 5013 
+Q 1237 5312 1742 5312 
+Q 1956 5312 2151 5251 
+Q 2347 5191 2475 5077 
+L 2304 4686 
+Q 2105 4878 1785 4878 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Paperlogy-4Regular-4c"/>
+     <use xlink:href="#Paperlogy-4Regular-6f" transform="translate(57.388885 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(121.38887 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-67" transform="translate(188.833298 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-4d" transform="translate(259.055511 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-65" transform="translate(354.361053 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-6d" transform="translate(415.916595 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-45" transform="translate(523.805466 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-76" transform="translate(589.138794 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-61" transform="translate(644.361008 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(702.222107 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-20" transform="translate(728.555435 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-4f" transform="translate(750.55542 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-76" transform="translate(835.777634 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-65" transform="translate(890.999847 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-72" transform="translate(952.555389 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-61" transform="translate(992.777603 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(1050.638702 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(1076.972031 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-20" transform="translate(1103.305359 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-50" transform="translate(1125.305344 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-65" transform="translate(1193.499771 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-72" transform="translate(1255.055313 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-66" transform="translate(1298.277527 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-6f" transform="translate(1330.555298 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-72" transform="translate(1394.555283 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-6d" transform="translate(1434.777496 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-61" transform="translate(1541.916367 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-6e" transform="translate(1599.777466 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-63" transform="translate(1667.221893 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-65" transform="translate(1724.444107 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-20" transform="translate(1785.999649 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-2d" transform="translate(1807.999634 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-20" transform="translate(1850.555176 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-43" transform="translate(1872.555161 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(1945.110703 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-61" transform="translate(1971.444031 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-75" transform="translate(2029.30513 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-64" transform="translate(2096.194016 0)"/>
+     <use xlink:href="#Paperlogy-4Regular-65" transform="translate(2165.638443 0)"/>
+    </g>
+   </g>
+   <g id="legend_1">
+    <g id="patch_21">
+     <path d="M 871.202344 73.02 
+L 1058.7 73.02 
+Q 1061.7 73.02 1061.7 70.02 
+L 1061.7 48.42 
+Q 1061.7 45.42 1058.7 45.42 
+L 871.202344 45.42 
+Q 868.202344 45.42 868.202344 48.42 
+L 868.202344 70.02 
+Q 868.202344 73.02 871.202344 73.02 
+z
+" style="stroke: #bdb6b0; stroke-linejoin: miter"/>
+    </g>
+    <g id="patch_22">
+     <path d="M 874.202344 63.785625 
+L 892.202344 63.785625 
+L 892.202344 53.285625 
+L 874.202344 53.285625 
+z
+" style="fill: #e4b592"/>
+    </g>
+    <g id="text_30">
+     <!-- Focused -->
+     <g style="fill: #fff3ea" transform="translate(904.202344 63.785625) scale(0.15 -0.15)">
+      <defs>
+       <path id="Paperlogy-4Regular-46" d="M 1045 2567 
+L 3492 2567 
+L 3492 2119 
+L 1045 2119 
+L 1045 0 
+L 533 0 
+L 533 4978 
+L 3790 4978 
+L 3790 4523 
+L 1045 4523 
+L 1045 2567 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#Paperlogy-4Regular-46"/>
+      <use xlink:href="#Paperlogy-4Regular-6f" transform="translate(61.249985 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-63" transform="translate(125.249969 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-75" transform="translate(182.472183 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-73" transform="translate(249.361069 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-65" transform="translate(298.916611 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-64" transform="translate(360.472153 0)"/>
+     </g>
+    </g>
+    <g id="patch_23">
+     <path d="M 998.692969 63.785625 
+L 1016.692969 63.785625 
+L 1016.692969 53.285625 
+L 998.692969 53.285625 
+z
+" style="fill: #7e7e7e"/>
+    </g>
+    <g id="text_31">
+     <!-- Full -->
+     <g style="fill: #fff3ea" transform="translate(1028.692969 63.785625) scale(0.15 -0.15)">
+      <use xlink:href="#Paperlogy-4Regular-46"/>
+      <use xlink:href="#Paperlogy-4Regular-75" transform="translate(60.499985 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(127.38887 0)"/>
+      <use xlink:href="#Paperlogy-4Regular-6c" transform="translate(153.722198 0)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p42fd183dfc">
+   <rect x="74.412777" y="37.92" width="994.787223" height="306.389841"/>
+  </clipPath>
+ </defs>
+</svg>
